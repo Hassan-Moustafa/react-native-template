@@ -54,6 +54,9 @@ class Home extends Component {
         if (rules.isNumber) {
             isValid = /^[0-9]*$/.test(value) && isValid;
         }
+        if(rules.isMoney){
+            isValid = /^([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\.[0-9]{0,2})?|0(\.[0-9]{0,2})?|(\.[0-9]{1,6})?)$/.test(value) && isValid;
+        }
 
         return isValid
     }

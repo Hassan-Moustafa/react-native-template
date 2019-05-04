@@ -36,6 +36,13 @@ class Home extends Component {
                         Go to New client ......
                 </Text>
                 </Button>
+                <Button
+                    onPress={() => this.props.history.push('/DeliveryRequest')}
+                >
+                    <Text>
+                        Go to Delivery request ......
+                </Text>
+                </Button>
             </View>
         );
     }
