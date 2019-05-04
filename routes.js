@@ -7,6 +7,8 @@ import Signup from "./android/app/src/components/Signup/Signup";
 import Signin from "./android/app/src/components/Signin/Signin";
 import NewClientForm from "./android/app/src/components/NewClientForm/NewClientForm";
 import DeliveryRequestConfirmation from "./android/app/src/components/DeliveryRequestConfirmation/DeliveryRequestConfirmation";
+import NewDeliveryRequest from "./android/app/src/components/NewDeliverRequest/NewDeliverRequest";
+
 class Routes extends Component {
 
   render() {
@@ -20,6 +22,7 @@ class Routes extends Component {
               <Route exact path="/Signin" component={Signin} />
               <Route exact path="/NewClient" component={NewClientForm} />
               <Route exact path="/DeliveryRequest" component={DeliveryRequestConfirmation} />
+              <Route exact path="/NewDeliveryRequest" component={NewDeliveryRequest} />
       </NativeRouter>
     );
   }
