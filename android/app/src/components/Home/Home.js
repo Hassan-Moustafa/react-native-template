@@ -22,6 +22,13 @@ class Home extends Component {
                         Go to Signup ......
                 </Text>
                 </Button>
+                <Button
+                    onPress={() => this.props.history.push('/Signin')}
+                >
+                    <Text>
+                        Go to Signin ......
+                </Text>
+                </Button>
             </View>
         );
     }
