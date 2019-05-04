@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import {Text,ScrollView} from 'react-native'
-import {View ,
-Button
-} from 'native-base'
+import { Text, ScrollView } from 'react-native'
+import {
+    View,
+    Button
+} from 'native-base';
+import InputComponent from '../Input/Input';
+
 class Home extends Component {
-    state = {  };
+    state = {};
 
     render() {
         return (
@@ -13,10 +16,10 @@ class Home extends Component {
                     Hello From Home
                 </Text>
                 <Button
-                onPress={()=>this.props.history.push('/Map')}
+                    onPress={() => this.props.history.push('/Signup')}
                 >
-                <Text>
-                Go to map
+                    <Text>
+                        Go to Signup ......
                 </Text>
                 </Button>
             </View>
