@@ -118,7 +118,7 @@ class Signup extends Component {
                     rounded: true,
                     placeholder: 'Region',
                     value: '',
-                    selectedValue: '',
+                    selectedValue: 'cairo',
                     fieldValueName: 'selectedValue',
                     options: [
                         { displayValue: 'cairo', value: 'cairo' },
@@ -135,8 +135,8 @@ class Signup extends Component {
                 validationRules: {
                     isRequired: true,
                 },
-                valid: false,
-                touched: false
+                valid: true,
+                touched: true
             },
             password: {
                 elementType: 'input',
