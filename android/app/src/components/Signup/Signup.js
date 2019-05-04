@@ -28,17 +28,17 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black'
     },
-    Button:{
+    Button: {
         backgroundColor: '#ffcf11',
         width: '100%',
-        marginTop: 10 
+        marginTop: 10
     },
-    ButtonText:{
+    ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
         fontSize: 20,
         color: 'black',
-        width:'100%',
+        width: '100%',
         textAlign: 'center'
     }
 })
@@ -129,7 +129,7 @@ class Signup extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                         borderRadius: 30,
-                        paddingLeft:10
+                        paddingLeft: 10
                     }
                 },
                 validationRules: {
@@ -176,38 +176,41 @@ class Signup extends Component {
     }
 
     onSubmit = () => {
-        console.log('submitted data ' , this.state.formValues);
+        console.log('submitted data ', this.state.formValues);
     }
 
     render() {
         console.log('signup')
         return (
             <View style={styles.container}>
-                <View style={styles.formContainer}>
-                    <View style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between'
-                    }}>
-                        <View>
-                            <Text style={styles.header}>Sign up</Text>
-                            <Text>to get started</Text>
-                        </View>
+                <ScrollView>
+
+                    <View style={styles.formContainer}>
                         <View style={{
-                            marginTop: 7
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between'
                         }}>
-                            <Text>Have an account</Text>
-                            <Text>Sign in</Text>
+                            <View>
+                                <Text style={styles.header}>Sign up</Text>
+                                <Text>to get started</Text>
+                            </View>
+                            <View style={{
+                                marginTop: 7
+                            }}>
+                                <Text>Have an account</Text>
+                                <Text>Sign in</Text>
+                            </View>
                         </View>
+                        <FormBuilder
+                            form={this.state.form}
+                            formValidityChanged={this.formValidityChanged}
+                            saveFormValues={this.setFormValues}></FormBuilder>
+                        <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                            <Text style={styles.ButtonText}>Sign Up</Text>
+                        </Button>
                     </View>
-                    <FormBuilder 
-                        form={this.state.form}
-                        formValidityChanged = {this.formValidityChanged}
-                        saveFormValues={this.setFormValues}></FormBuilder>
-                    <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
-                        <Text style={styles.ButtonText}>Sign Up</Text>
-                    </Button>
-                </View>
+                </ScrollView>
             </View>
         );
     }

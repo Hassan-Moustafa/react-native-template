@@ -206,6 +206,7 @@ class DeliveryRequestConfirmation extends Component {
         console.log('new client')
         return (
             <View style={styles.container}>
+            <ScrollView>
                 <Text style={{
                     textAlign: 'center',
                     fontSize: 20,
@@ -224,6 +225,7 @@ class DeliveryRequestConfirmation extends Component {
                         </Text>
                     </Button>
                 </View>
+                </ScrollView>
             </View>
         );
     }
