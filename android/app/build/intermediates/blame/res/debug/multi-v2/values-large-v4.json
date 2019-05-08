@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "E:\\react-native-template\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7998ca7d2f9f2e4dcc8ef921fc41d4b8\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\a3b4f100a0052e1ad12c7ca0f16479a9\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

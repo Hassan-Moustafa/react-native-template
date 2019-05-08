@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "E:\\react-native-template\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\58f7429db365e9b81eca5ff05316d4b9\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7998ca7d2f9f2e4dcc8ef921fc41d4b8\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\a3b4f100a0052e1ad12c7ca0f16479a9\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\b32efa40de0b10fcc7d62546c81b6d0c\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

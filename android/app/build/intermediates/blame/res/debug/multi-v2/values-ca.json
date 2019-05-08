@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
+            "outputFile": "E:\\react-native-template\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7998ca7d2f9f2e4dcc8ef921fc41d4b8\\res\\values-ca\\values-ca.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,223,329,436,519,627,753,837,918,1001,1112,1221,1319,1429,1533,1641,1801,1900",
-                        "endColumns": "117,105,106,82,107,125,83,80,82,110,108,97,109,103,107,159,98,80",
-                        "endOffsets": "218,324,431,514,622,748,832,913,996,1107,1216,1314,1424,1528,1636,1796,1895,1976"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,223,329,436,519,627,753,837,918,1001,1112,1221,1319,1429,1533,1641,1801,4637",
-                        "endColumns": "117,105,106,82,107,125,83,80,82,110,108,97,109,103,107,159,98,80",
-                        "endOffsets": "218,324,431,514,622,748,832,913,996,1107,1216,1314,1424,1528,1636,1796,1895,4713"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\58f7429db365e9b81eca5ff05316d4b9\\res\\values-ca\\values-ca.xml",
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\b32efa40de0b10fcc7d62546c81b6d0c\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\6729b323526cdc98a787d5b3cdaf7aea\\res\\values-ca\\values.xml",
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\1ea92f0abca92dd6bc8d616d5e492661\\res\\values-ca\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.1.0.aar\\eee90911813372b1303558df58b8d9c9\\res\\values-ca\\values.xml",
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.1.0.aar\\08c4dc1f34e7b31d31cd52da42326530\\res\\values-ca\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -69,6 +52,23 @@
                         "startOffsets": "1900,2007,2191,2320,2431,2640,2769,2922,3253,3483,3594,3784,3917,4140,4328,4423,4521",
                         "endColumns": "106,183,128,110,208,128,152,136,229,110,189,132,222,187,94,97,115",
                         "endOffsets": "2002,2186,2315,2426,2635,2764,2917,3054,3478,3589,3779,3912,4135,4323,4418,4516,4632"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Amira\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\a3b4f100a0052e1ad12c7ca0f16479a9\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,223,329,436,519,627,753,837,918,1001,1112,1221,1319,1429,1533,1641,1801,1900",
+                        "endColumns": "117,105,106,82,107,125,83,80,82,110,108,97,109,103,107,159,98,80",
+                        "endOffsets": "218,324,431,514,622,748,832,913,996,1107,1216,1314,1424,1528,1636,1796,1895,1976"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,223,329,436,519,627,753,837,918,1001,1112,1221,1319,1429,1533,1641,1801,4637",
+                        "endColumns": "117,105,106,82,107,125,83,80,82,110,108,97,109,103,107,159,98,80",
+                        "endOffsets": "218,324,431,514,622,748,832,913,996,1107,1216,1314,1424,1528,1636,1796,1895,4713"
                     }
                 }
             ]
