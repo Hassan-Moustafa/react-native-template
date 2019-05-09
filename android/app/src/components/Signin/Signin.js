@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet } from 'react-native'
+import { Text, ScrollView, StyleSheet ,Image} from 'react-native'
 import {
     View,
     Button
@@ -58,6 +58,9 @@ class Signin extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -78,6 +81,9 @@ class Signin extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -111,6 +117,18 @@ class Signin extends Component {
         console.log('signin')
         return (
             <View style={styles.container}>
+                <View>
+                    <Image
+                        style={{ width: '50%', height: 200, position: 'relative', left: '25%' }}
+                        source={require('../../../../../assets/Logo.png')}
+                        resizeMode="contain" />
+                    <Text style={[styles.header,
+                    {
+                        textAlign: 'center',
+                        position: 'relative',
+                        bottom: 10
+                    }]}>Welcome</Text>
+                </View>
                 <View style={styles.formContainer}>
                     <View>
                         <Text style={styles.header}>Sign in</Text>

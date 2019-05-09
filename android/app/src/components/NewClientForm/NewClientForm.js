@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
     formContainer: {
         display: 'flex',
         backgroundColor: 'white',
-        width: '80%',
+        width: '90%',
         position: 'relative',
-        left: '10%',
+        left: '5%',
         padding: 20,
         borderRadius: 5
     },
@@ -59,6 +59,9 @@ class NewClientForm extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -80,6 +83,9 @@ class NewClientForm extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                         borderRadius: 30
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -105,6 +111,9 @@ class NewClientForm extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                         borderRadius: 30
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -114,46 +123,6 @@ class NewClientForm extends Component {
                     isNumber: true
                 },
                 valid: false,
-                touched: false
-            },
-            address: {
-                elementType: 'input',
-                elementConfig: {
-                    icon: 'ios-navigate',
-                    rounded: true,
-                    placeholder: 'Address',
-                    value: '',
-                    fieldValueName: 'value',
-                    style: {
-                    },
-                    wrapperStyle: {
-                        backgroundColor: '#cecece',
-                    }
-                },
-                validationRules: {
-                    isRequired: true,
-                },
-                valid: false,
-                touched: false
-            },
-            address2: {
-                elementType: 'input',
-                elementConfig: {
-                    icon: 'ios-navigate',
-                    rounded: true,
-                    placeholder: 'Address 2',
-                    value: '',
-                    fieldValueName: 'value',
-                    style: {
-                    },
-                    wrapperStyle: {
-                        backgroundColor: '#cecece',
-                    }
-                },
-                validationRules: {
-                    isRequired: false,
-                },
-                valid: true,
                 touched: false
             },
             region: {
@@ -176,6 +145,9 @@ class NewClientForm extends Component {
                         backgroundColor: '#cecece',
                         borderRadius: 30,
                         paddingLeft: 10
+                    },
+                    rootWrapperStyle:{
+                        width: '50%'
                     }
                 },
                 validationRules: {
@@ -184,6 +156,99 @@ class NewClientForm extends Component {
                 valid: true,
                 touched: true
             },
+            district: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'القطعة',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '50%'
+                    }
+                },
+                validationRules: {
+                    isRequired: true,
+                },
+                valid: false,
+                touched: false
+            },
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'street',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '50%'
+                    }
+                },
+                validationRules: {
+                    isRequired: false,
+                },
+                valid: true,
+                touched: false
+            },
+            jada: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'الجادة',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '50%'
+                    }
+                },
+                validationRules: {
+                    isRequired: false,
+                },
+                valid: true,
+                touched: false
+            },
+            house: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'House',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
+                    }
+                },
+                validationRules: {
+                    isRequired: false,
+                },
+                valid: true,
+                touched: false
+            },
+           
         },
         formValidity: false,
         formValues: {}
