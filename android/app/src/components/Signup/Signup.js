@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet } from 'react-native'
+import { Text, ScrollView, StyleSheet, Image } from 'react-native'
 import {
     View,
     Button
@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
     formContainer: {
         display: 'flex',
         backgroundColor: 'white',
-        width: '80%',
+        width: '90%',
         position: 'relative',
-        left: '10%',
+        left: '5%',
         padding: 20,
         borderRadius: 5
     },
@@ -58,6 +58,9 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -78,7 +81,10 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        borderRadius: 30
+                        borderRadius: 30,
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -86,26 +92,6 @@ class Signup extends Component {
                     minLength: 11,
                     maxLength: 11,
                     isNumber: true
-                },
-                valid: false,
-                touched: false
-            },
-            address: {
-                elementType: 'input',
-                elementConfig: {
-                    icon: 'ios-navigate',
-                    rounded: true,
-                    placeholder: 'Address',
-                    value: '',
-                    fieldValueName: 'value',
-                    style: {
-                    },
-                    wrapperStyle: {
-                        backgroundColor: '#cecece',
-                    }
-                },
-                validationRules: {
-                    isRequired: true,
                 },
                 valid: false,
                 touched: false
@@ -129,7 +115,10 @@ class Signup extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                         borderRadius: 30,
-                        paddingLeft: 10
+                        paddingLeft: 10,
+                    },
+                    rootWrapperStyle:{
+                        width: '55%'
                     }
                 },
                 validationRules: {
@@ -137,6 +126,81 @@ class Signup extends Component {
                 },
                 valid: true,
                 touched: true
+            },
+            district: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'القطعة',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                        
+                    },
+                    rootWrapperStyle:{
+                        width: '45%'
+                    }
+                    
+                },
+                validationRules: {
+                    isRequired: true,
+                },
+                valid: false,
+                touched: false
+            },
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'street',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                        
+                    },
+                    rootWrapperStyle:{
+                        width: '55%'
+                    }
+                    
+                },
+                validationRules: {
+                    isRequired: true,
+                },
+                valid: false,
+                touched: false
+            },
+            jada: {
+                elementType: 'input',
+                elementConfig: {
+                    icon: 'ios-navigate',
+                    rounded: true,
+                    placeholder: 'الجادة',
+                    value: '',
+                    fieldValueName: 'value',
+                    style: {
+                    },
+                    wrapperStyle: {
+                        backgroundColor: '#cecece',
+                        
+                    },
+                    rootWrapperStyle:{
+                        width: '45%'
+                    }
+                    
+                },
+                validationRules: {
+                    isRequired: true,
+                },
+                valid: false,
+                touched: false
             },
             password: {
                 elementType: 'input',
@@ -150,6 +214,9 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                    },
+                    rootWrapperStyle:{
+                        width: '100%'
                     }
                 },
                 validationRules: {
@@ -183,34 +250,47 @@ class Signup extends Component {
         console.log('signup')
         return (
             <View style={styles.container}>
-                <ScrollView>
-
-                    <View style={styles.formContainer}>
-                        <View style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between'
-                        }}>
-                            <View>
-                                <Text style={styles.header}>Sign up</Text>
-                                <Text>to get started</Text>
-                            </View>
-                            <View style={{
-                                marginTop: 7
-                            }}>
-                                <Text>Have an account</Text>
-                                <Text>Sign in</Text>
-                            </View>
+                <View>
+                    <ScrollView>
+                        <View>
+                            <Image
+                                style={{ width: '50%', height: 200, position: 'relative', left: '25%' }}
+                                source={require('../../../../../assets/Logo.png')}
+                                resizeMode="contain" />
+                            <Text style={[styles.header,
+                            {
+                                textAlign: 'center',
+                                position: 'relative',
+                                bottom: 10
+                            }]}>Welcome</Text>
                         </View>
-                        <FormBuilder
-                            form={this.state.form}
-                            formValidityChanged={this.formValidityChanged}
-                            saveFormValues={this.setFormValues}></FormBuilder>
-                        <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
-                            <Text style={styles.ButtonText}>Sign Up</Text>
-                        </Button>
-                    </View>
-                </ScrollView>
+                        <View style={styles.formContainer}>
+                            <View style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between'
+                            }}>
+                                <View>
+                                    <Text style={styles.header}>Sign up</Text>
+                                    <Text>to get started</Text>
+                                </View>
+                                <View style={{
+                                    marginTop: 7
+                                }}>
+                                    <Text>Have an account</Text>
+                                    <Text>Sign in</Text>
+                                </View>
+                            </View>
+                            <FormBuilder
+                                form={this.state.form}
+                                formValidityChanged={this.formValidityChanged}
+                                saveFormValues={this.setFormValues}></FormBuilder>
+                            <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                                <Text style={styles.ButtonText}>Sign Up</Text>
+                            </Button>
+                        </View>
+                    </ScrollView>
+                </View>
             </View>
         );
     }

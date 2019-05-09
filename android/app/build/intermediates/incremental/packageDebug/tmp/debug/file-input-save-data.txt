@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat May 04 19:05:35 EET 2019
+#Thu May 09 17:11:49 EET 2019
 5.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 42.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 22.path=lib/x86/libglog.so
@@ -13,7 +13,7 @@
 39.set=NATIVE_RESOURCE
 26.path=fonts/FontAwesome5_Regular.ttf
 6.baseType=DIRECTORY
-36.path=index.android.bundle
+36.path=lib/x86_64/libimagepipeline.so
 10.set=NATIVE_RESOURCE
 28.set=DEX
 22.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
@@ -21,7 +21,7 @@
 12.path=lib/x86/libglog_init.so
 17.set=ASSET
 26.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-36.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+36.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 1.set=NATIVE_RESOURCE
 37.baseType=DIRECTORY
 28.baseType=DIRECTORY
@@ -30,7 +30,7 @@
 12.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 8.set=NATIVE_RESOURCE
 7.baseType=DIRECTORY
-35.set=NATIVE_RESOURCE
+35.set=ASSET
 2.path=fonts/MaterialIcons.ttf
 16.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 24.set=ASSET
@@ -144,7 +144,7 @@ count=45
 29.set=NATIVE_RESOURCE
 3.baseType=DIRECTORY
 25.path=lib/x86/libgnustl_shared.so
-35.path=lib/x86_64/libimagepipeline.so
+35.path=index.android.bundle
 18.set=NATIVE_RESOURCE
 19.path=ula.kml
 21.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
@@ -158,14 +158,14 @@ count=45
 16.baseType=DIRECTORY
 25.baseType=DIRECTORY
 44.baseType=DIRECTORY
-35.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+35.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 9.set=NATIVE_RESOURCE
 15.path=fonts/FontAwesome.ttf
 19.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 4.baseType=DIRECTORY
 29.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 11.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
-36.set=ASSET
+36.set=NATIVE_RESOURCE
 39.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 1.path=lib/x86/libicu_common.so
 25.set=NATIVE_RESOURCE

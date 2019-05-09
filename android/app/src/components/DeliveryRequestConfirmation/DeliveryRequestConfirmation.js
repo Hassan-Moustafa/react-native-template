@@ -28,18 +28,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'black'
     },
-    Button:{
+    Button: {
         backgroundColor: '#ffcf11',
         width: '70%',
         marginTop: 10,
         alignSelf: 'center'
     },
-    ButtonText:{
+    ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
         fontSize: 20,
         color: 'black',
-        width:'100%',
+        width: '100%',
         textAlign: 'center'
     }
 })
@@ -115,7 +115,7 @@ class DeliveryRequestConfirmation extends Component {
                 elementType: 'input',
                 elementConfig: {
                     icon: 'coins',
-                    iconType:'FontAwesome5',
+                    iconType: 'FontAwesome5',
                     rounded: true,
                     placeholder: 'Order value',
                     value: '',
@@ -138,7 +138,7 @@ class DeliveryRequestConfirmation extends Component {
                 elementType: 'input',
                 elementConfig: {
                     icon: 'coins',
-                    iconType:'FontAwesome5',
+                    iconType: 'FontAwesome5',
                     rounded: true,
                     placeholder: 'Delivery value',
                     value: '',
@@ -161,7 +161,7 @@ class DeliveryRequestConfirmation extends Component {
                 elementType: 'input',
                 elementConfig: {
                     icon: 'coins',
-                    iconType:'FontAwesome5',
+                    iconType: 'FontAwesome5',
                     rounded: true,
                     placeholder: 'Subtotal',
                     value: '',
@@ -180,7 +180,7 @@ class DeliveryRequestConfirmation extends Component {
                 valid: false,
                 touched: false
             },
-            
+
         },
         formValidity: false,
         formValues: {}
@@ -199,33 +199,35 @@ class DeliveryRequestConfirmation extends Component {
     }
 
     onSubmit = () => {
-        console.log('submitted data ' , this.state.formValues);
+        console.log('submitted data ', this.state.formValues);
     }
 
     render() {
         console.log('new client')
         return (
             <View style={styles.container}>
-            <ScrollView>
-                <Text style={{
-                    textAlign: 'center',
-                    fontSize: 20,
-                    fontWeight: 'bold',
-                    marginBottom: 10,
-                    color: 'black'
-                }}>Delivery request confirmation</Text>
-                <View style={styles.formContainer}>
-                    <FormBuilder 
-                        form={this.state.form}
-                        formValidityChanged = {this.formValidityChanged}
-                        saveFormValues={this.setFormValues}></FormBuilder>
-                    <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
-                        <Text style={styles.ButtonText}>
-                            Save
+                <View>
+                    <ScrollView>
+                        <Text style={{
+                            textAlign: 'center',
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            marginBottom: 10,
+                            color: 'black'
+                        }}>Delivery request confirmation</Text>
+                        <View style={styles.formContainer}>
+                            <FormBuilder
+                                form={this.state.form}
+                                formValidityChanged={this.formValidityChanged}
+                                saveFormValues={this.setFormValues}></FormBuilder>
+                            <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                                <Text style={styles.ButtonText}>
+                                    Save
                         </Text>
-                    </Button>
+                            </Button>
+                        </View>
+                    </ScrollView>
                 </View>
-                </ScrollView>
             </View>
         );
     }

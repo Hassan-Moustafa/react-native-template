@@ -96,7 +96,11 @@ class Home extends Component {
             )
         })
         return (
-            <View>
+            <View style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap'
+            }}>
                 {formComponents}
             </View>
         );

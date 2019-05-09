@@ -13,7 +13,7 @@ class Home extends Component {
         return (
             <View>
                 <Text>
-                    Hello From Home
+                    Hello From Home 2
                 </Text>
                 <Button
                     onPress={() => this.props.history.push('/Signup')}

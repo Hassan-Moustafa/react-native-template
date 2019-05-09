@@ -137,7 +137,7 @@ class InputComponent extends Component {
                 break;
         }
         return (
-            <View>
+            <View style={this.props.elementConfig.rootWrapperStyle}>
                 {this.$InputComponent}
             </View>
         );
