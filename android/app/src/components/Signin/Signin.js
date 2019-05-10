@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet ,Image} from 'react-native'
+import { Text, ScrollView, StyleSheet, Image } from 'react-native'
 import {
     View,
     Button
@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        flex: 1
+        justifyContent: 'flex-start',
+        flex: 1,
     },
     formContainer: {
         display: 'flex',
@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
         position: 'relative',
         left: '10%',
         padding: 20,
-        borderRadius: 5
+        borderRadius: 5,
+        marginBottom: 20
     },
     header: {
         fontSize: 25,
@@ -59,7 +60,7 @@ class Signin extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                     },
-                    rootWrapperStyle:{
+                    rootWrapperStyle: {
                         width: '100%'
                     }
                 },
@@ -82,7 +83,7 @@ class Signin extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                     },
-                    rootWrapperStyle:{
+                    rootWrapperStyle: {
                         width: '100%'
                     }
                 },
@@ -111,49 +112,56 @@ class Signin extends Component {
 
     onSubmit = () => {
         console.log('submitted data ', this.state.formValues);
+        this.props.history.push('/NewClient')
     }
 
     render() {
         console.log('signin')
         return (
             <View style={styles.container}>
-                <View>
-                    <Image
-                        style={{ width: '50%', height: 200, position: 'relative', left: '25%' }}
-                        source={require('../../../../../assets/Logo.png')}
-                        resizeMode="contain" />
-                    <Text style={[styles.header,
-                    {
-                        textAlign: 'center',
-                        position: 'relative',
-                        bottom: 10
-                    }]}>Welcome</Text>
-                </View>
-                <View style={styles.formContainer}>
+                <ScrollView>
                     <View>
-                        <Text style={styles.header}>Sign in</Text>
-                        <Text>to get started</Text>
+                        <Image
+                            style={{ width: '50%', height: 150, position: 'relative', left: '25%' }}
+                            source={require('../../../../../assets/Logo.png')}
+                            resizeMode="contain" />
+                        <Text style={[styles.header,
+                        {
+                            textAlign: 'center',
+                            position: 'relative',
+                            bottom: 10
+                        }]}>Welcome</Text>
                     </View>
-                    <FormBuilder
-                        form={this.state.form}
-                        formValidityChanged={this.formValidityChanged}
-                        saveFormValues={this.setFormValues}></FormBuilder>
-                    <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
-                        <Text style={styles.ButtonText}>Sign In</Text>
-                    </Button>
+                    <View style={styles.formContainer}>
+                        <View>
+                            <Text style={styles.header}>Sign in</Text>
+                            <Text>to get started</Text>
+                        </View>
+                        <FormBuilder
+                            form={this.state.form}
+                            formValidityChanged={this.formValidityChanged}
+                            saveFormValues={this.setFormValues}></FormBuilder>
+                        <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                            <Text style={styles.ButtonText}>Sign In</Text>
+                        </Button>
+                        <Text style={{
+                            textAlign: 'center',
+                            color: 'black',
+                            marginTop: 5
+                        }}>Forget your password?</Text>
+                    </View>
                     <Text style={{
                         textAlign: 'center',
                         color: 'black',
-                        marginTop: 5
-                    }}>Forget your password?</Text>
-                </View>
-                <Text style={{
-                    textAlign: 'center',
-                    color: 'black',
-                    marginTop: 5
-                }}>Don't have an account? <Text style={{
-                    fontWeight: 'bold'
-                }}>Sign Up</Text></Text>
+                        marginTop: 5,
+                        marginBottom: 20
+
+                    }}>Don't have an account? <Text
+                        onPress={() => this.props.history.push('/Signup')}
+                        style={{
+                            fontWeight: 'bold'
+                        }}>Sign Up</Text></Text>
+                </ScrollView>
             </View>
         );
     }

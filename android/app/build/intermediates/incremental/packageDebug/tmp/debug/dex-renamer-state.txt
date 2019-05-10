@@ -1,4 +1,4 @@
-#Thu May 09 17:11:47 EET 2019
+#Fri May 10 01:02:35 EET 2019
 base.0=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

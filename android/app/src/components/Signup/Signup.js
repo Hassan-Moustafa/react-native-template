@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flex: 1
     },
     formContainer: {
@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
         position: 'relative',
         left: '5%',
         padding: 20,
-        borderRadius: 5
+        borderRadius: 5,
+        marginBottom: 30,
+        // top: -20
     },
     header: {
         fontSize: 25,
@@ -244,6 +246,7 @@ class Signup extends Component {
 
     onSubmit = () => {
         console.log('submitted data ', this.state.formValues);
+        this.props.history.push('/SuccessScreen')
     }
 
     render() {
@@ -254,7 +257,7 @@ class Signup extends Component {
                     <ScrollView>
                         <View>
                             <Image
-                                style={{ width: '50%', height: 200, position: 'relative', left: '25%' }}
+                                style={{ width: '50%', height: 150, position: 'relative', left: '25%' }}
                                 source={require('../../../../../assets/Logo.png')}
                                 resizeMode="contain" />
                             <Text style={[styles.header,

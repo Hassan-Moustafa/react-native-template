@@ -7,7 +7,13 @@ import {
 import InputComponent from '../Input/Input';
 
 class Home extends Component {
-    state = {};
+    state = {
+        routes: [
+            {
+                
+            }
+        ]
+    };
 
     render() {
         return (
