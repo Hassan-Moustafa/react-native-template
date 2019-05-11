@@ -112,7 +112,7 @@ class Signin extends Component {
 
     onSubmit = () => {
         console.log('submitted data ', this.state.formValues);
-        this.props.history.push('/NewClient')
+        this.props.history.push('/Home')
     }
 
     render() {
