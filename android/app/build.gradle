@@ -94,9 +94,22 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
+signingConfigs {
+release {
+storeFile file(MYAPP_RELEASE_STORE_FILE)
+storePassword MYAPP_RELEASE_STORE_PASSWORD
+keyAlias MYAPP_RELEASE_KEY_ALIAS
+keyPassword MYAPP_RELEASE_KEY_PASSWORD
+}
+}
+
     compileSdkVersion 27 
     buildToolsVersion  "27.0.3" 
 
+ lintOptions {
+        abortOnError false
+    }
+    
     defaultConfig {
         applicationId "com.deliveryaoo"
         minSdkVersion 16 
@@ -117,6 +130,7 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
@@ -137,6 +151,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-maps')
  implementation(project(':react-native-maps')){
         exclude group: "com.android.support"
    }

@@ -9,11 +9,11 @@ export default class SplashSign extends Component {
 
   render() {
     return (
-<ImageBackground
+      <ImageBackground
 
-style={{width:responsiveWidth(100),height:responsiveHeight(100)}}
-source={require('../../main/Images/splash.png')}
-/>
+        style={{ width: responsiveWidth(100), height: responsiveHeight(100) }}
+        source={require('../../../main/Images/splash.png')}
+      />
 
 
     );

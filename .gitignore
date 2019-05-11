@@ -5,3 +5,8 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
+android/build
+android/.gradle
+android/app/build
+gradle
+ios

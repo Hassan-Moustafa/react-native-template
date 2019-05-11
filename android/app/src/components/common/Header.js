@@ -1,75 +1,73 @@
-import React, { Component } from 'react';
-import {Text,View} from 'react-native'
-import {Button,
-    Title,Body,
-    Badge,
-    Left,Container, Header, Content, Icon, Right } from "native-base";
-import { responsiveWidth, responsiveHeight } from 'react-native-responsive-dimensions';
-import { GlobalStyles } from '../../globalStyles/globalStyles';
+import React, { Component } from "react";
+import { Text, View } from "react-native";
+import {
+  Button,
+  Body,
+  Badge,
+  Left,
+  Container,
+  Header,
+  Content,
+  Icon,
+  Right,
+  Title
+} from "native-base";
+import {
+  responsiveWidth,
+  responsiveHeight,responsiveFontSize
+} from "react-native-responsive-dimensions";
+import { GlobalStyles } from "../../globalStyles/globalStyles";
 
 class HeaderApp extends Component {
-    state = {  };
+  state = {};
 
-    render() {
-        const{heading,componentName,iconType,iconName,bGColor}=this.props
-        return (
-            <Header
-                 style={{backgroundColor:heading=="Breakfast"?GlobalStyles.mainColor:bGColor}}
-
-            >
-            <Left
-            style={{ marginRight:responsiveWidth(5)}}
-            >
-            <Button
-            onPress={()=>this.props.history.goBack()}
-             transparent>
-            
+  render() {
+    const {
+      heading,
+      componentName,
+      iconTypeLeft,
+      iconNameLeft,
+      history,
+      iconTypeRight,
+      iconNameRight
+    } = this.props;
+    return (
+      <Header style={{ backgroundColor: GlobalStyles.mainColor }}>
+        {iconNameLeft ? (
+          <Left style={{ flex: 1 }}>
+            <Button onPress={() => this.props.history.goBack()} transparent>
               <Icon
-              style={{color:heading=="Breakfast"?'white':'black',fontSize:25}}
-              type={iconType}
-               name={iconName} 
-               />
+                style={{ fontSize: 25 }}
+                type={iconTypeLeft}
+                name={iconNameLeft}
+              />
             </Button>
-          </Left> 
-           <Body>
-            <Text
-            style={{color:heading=="Breakfast"?'white':'black',fontWeight:'bold'}}
-            
-            >{heading}</Text>
-          </Body>
-{componentName=="Calender"?(
-    <Right>
+          </Left>
+        ) : (
+          <View />
+        )}
 
-<Button 
-transparent
-active badge vertical>
-              <Badge
-              style={{ 
-                zIndex:100 ,
-                  left:responsiveWidth(9)
-                  ,position:'absolute',top:responsiveHeight(1), width:20,height:20}}
-               ><Text
-               style={{
-                position:'absolute',
-                left:responsiveWidth(2),
-                   fontSize:10,top:responsiveHeight(.25)}}
-               >4</Text>
-               </Badge>
-              <Icon 
-              type="AntDesign"
-              style={{color:GlobalStyles.mainColor,fontSize:40}}
-              active name="shoppingcart" />
+        <Body style={{ flex: 1, justifyContent: "center" }}>
+          <Title style={{ alignSelf: "center",
+         fontSize: responsiveFontSize(1.8) }}>{heading}</Title>
+        </Body>
+
+        {iconNameRight ? (
+          <Right style={{ flex: 1 }}>
+            <Button transparent>
+              <Icon
+                style={{ fontSize: 25 }}
+                type={iconTypeRight}
+                name={iconNameRight}
+              />
             </Button>
-            </Right>
-
-            
-            ):<View></View>
-}
-
-            </Header>
-    
-        );
-    }
+          </Right>
+        ) : (
+          <View />
+        )}
+      </Header>
+    );
+  }
 }
 
 export default HeaderApp;
