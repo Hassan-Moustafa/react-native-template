@@ -9,4 +9,5 @@ android/build
 android/.gradle
 android/app/build
 gradle
+*.gradle
 ios
