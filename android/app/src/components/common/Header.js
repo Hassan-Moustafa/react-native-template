@@ -10,11 +10,14 @@ import {
   Content,
   Icon,
   Right,
-  Title
+  Title,
+  Item,
+  Input
 } from "native-base";
 import {
   responsiveWidth,
-  responsiveHeight,responsiveFontSize
+  responsiveHeight,
+  responsiveFontSize
 } from "react-native-responsive-dimensions";
 import { GlobalStyles } from "../../globalStyles/globalStyles";
 
@@ -37,7 +40,7 @@ class HeaderApp extends Component {
           <Left style={{ flex: 1 }}>
             <Button onPress={() => this.props.history.goBack()} transparent>
               <Icon
-                style={{ fontSize: 25 }}
+                style={{ fontSize: 30 }}
                 type={iconTypeLeft}
                 name={iconNameLeft}
               />
@@ -47,16 +50,35 @@ class HeaderApp extends Component {
           <View />
         )}
 
-        <Body style={{ flex: 1, justifyContent: "center" }}>
-          <Title style={{ alignSelf: "center",
-         fontSize: responsiveFontSize(1.8) }}>{heading}</Title>
-        </Body>
+       
+          {/* {componentName == "orders" ? (
+            <View
+                 style={{width:responsiveWidth(55),alignSelf:'center'
+
+}}
+            >
+            <Item rounded
+       
+            >
+              <Input placeholder="search" />
+              <Icon name="magnifier" type="SimpleLineIcons" />
+            </Item>
+            </View>
+           */}
+            <Body style={{ flex: 1, justifyContent: "center" }}>
+            <Title
+              style={{ alignSelf: "center", fontSize: responsiveFontSize(1.8) }}
+            >
+              {heading}
+            </Title>
+            </Body>
+
 
         {iconNameRight ? (
           <Right style={{ flex: 1 }}>
             <Button transparent>
               <Icon
-                style={{ fontSize: 25 }}
+                style={{ fontSize: 30 }}
                 type={iconTypeRight}
                 name={iconNameRight}
               />

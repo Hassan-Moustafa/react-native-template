@@ -17,6 +17,9 @@ import {
   responsiveWidth
 } from "react-native-responsive-dimensions";
 import SucceedOrder from "./android/app/src/components/OrderDetailsTypes/SucceedOrder";
+import Orders from './android/app/src/components/Orders/Orders'
+import ProcessingOrders from "./android/app/src/components/Orders/ProccesingOrders";
+
 class Routes extends Component {
   // state = {
   //   currentComponent: Splash
@@ -40,7 +43,9 @@ class Routes extends Component {
             width: responsiveWidth(100)
           }}
         >
-        
+                <Route exact path="/" component={ProcessingOrders}/>
+
+        <Route exact path="/Orders" component={Orders}/>
         <Route exact path="/SucceedOrderDetails" component={SucceedOrder}/>
           <Route exact path="/NewOrderDetails" component={NewOrder} />
           <Route exact path="/FiredOrderDetails" component={FiredOrder} />
