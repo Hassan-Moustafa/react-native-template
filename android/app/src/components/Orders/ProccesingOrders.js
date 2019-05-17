@@ -6,7 +6,7 @@ import {
   responsiveWidth
 } from "react-native-responsive-dimensions";
 import OrderInfo  from '../common/OrderInfo'
-import Orders from "./Orders";
+import Orders from "../common/Orders";
 class ProcessingOrders extends Component {
   state = {};
 

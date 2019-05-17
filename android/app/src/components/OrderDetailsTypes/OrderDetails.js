@@ -246,20 +246,22 @@ class OrderDetails extends Component {
         </List>
         {(type == "New" || type == "Fired") && <TrackingMap type={type} />}
         {(type == "Failed" || type == "Succeed") && (
-          <View
-          style={{margin:"5%"}}
-          >
+          <View style={{ margin: "5%" }}>
             <Icon
-            style={{color:type=="Succeed"?"green":"red", alignSelf:'center',
-              textAlign:'center'}}
-            type={type=="Succeed"?"AntDesign":"Entypo"}
-             name={type == "Succeed" ? "checkcircleo" : "cross"} />
+              style={{
+                color: type == "Succeed" ? "green" : "red",
+                alignSelf: "center",
+                textAlign: "center"
+              }}
+              type={type == "Succeed" ? "AntDesign" : "Entypo"}
+              name={type == "Succeed" ? "checkcircleo" : "cross"}
+            />
             <Text
-            style={{
-              color:"black",
-              alignSelf:'center',
-              textAlign:'center'
-            }}
+              style={{
+                color: "black",
+                alignSelf: "center",
+                textAlign: "center"
+              }}
             >{`${type}\u00A0Order`}</Text>
           </View>
         )}

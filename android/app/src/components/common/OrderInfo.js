@@ -61,6 +61,22 @@ class OrderInfo extends Component {
             />
             )
           }
+          {
+            orderType=="Success" &&(
+              <Image
+              style={{ width: 65, height: 55 }}
+              source={require("../../main/Images/SuccessOrder.png")}
+            />
+            )
+          }
+          {
+            orderType=="Failed" &&(
+              <Image
+              style={{ width: 65, height: 55 }}
+              source={require("../../main/Images/FailedOrder.png")}
+            />
+            )
+          }
           </View>
         </View>
       </Card>
