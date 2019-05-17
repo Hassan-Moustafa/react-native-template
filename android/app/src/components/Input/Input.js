@@ -13,7 +13,9 @@ import {
     Body,
     Radio,
     DatePicker
-} from 'native-base'
+} from 'native-base';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
+
 
 const styles = StyleSheet.create({
     notValid: {
@@ -46,18 +48,20 @@ class InputComponent extends Component {
         switch (this.InputType) {
             case 'input':
                 this.$InputComponent = (
-                    <Item
-                        rounded={this.props.elementConfig.rounded ? this.props.elementConfig.rounded : false}
-                        style={$styles}>
-                        {
-                            this.props.elementConfig.icon
-                                ? <Icon active name={this.props.elementConfig.icon} type={this.props.elementConfig.iconType} />
-                                : null
-                        }
-                        <Input
-                            {... this.props.elementConfig}
-                            onChangeText={(text) => this.props.onChangeHandler(text)} />
-                    </Item>
+                        <Item
+                            rounded={this.props.elementConfig.rounded ? this.props.elementConfig.rounded : false}
+                            style={$styles}>
+                            {
+                                this.props.elementConfig.icon
+                                    ? <Icon active name={this.props.elementConfig.icon} type={this.props.elementConfig.iconType} />
+                                    : null
+                            }
+                            <Input
+                                {... this.props.elementConfig}
+                                style={{ width: '100%' }}
+                                onChangeText={(text) => this.props.onChangeHandler(text)} />
+
+                        </Item>
                 )
                 break;
             case 'textarea':
@@ -137,8 +141,9 @@ class InputComponent extends Component {
                 break;
         }
         return (
-            <View style={this.props.elementConfig.rootWrapperStyle}>
+            <View style={[this.props.elementConfig.rootWrapperStyle, {height: this.props.validationMsg ? responsiveHeight(10) : responsiveHeight(6)}]}>
                 {this.$InputComponent}
+                { this.props.validationMsg !== null ? <Text style={{ marginLeft: 10, color:'red', fontSize: 15 }}>{this.props.validationMsg}</Text> : null }
             </View>
         );
     }

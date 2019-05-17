@@ -9,14 +9,17 @@ import {
     Icon
 } from 'native-base';
 import FormBuilder from '../FormBuilder/FormBuilder';
+import Header from '../common/common/Header';
+import Drawer from '../common/common/Drawer';
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        flex: 1
+        justifyContent: 'flex-start',
+        flex: 1,
+        position: 'relative'
     },
     formContainer: {
         display: 'flex',
@@ -331,51 +334,56 @@ class NewClientForm extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View>
-                    <ScrollView>
-                        <Text style={{
-                            textAlign: 'center',
-                            fontSize: 20,
-                            fontWeight: 'bold',
-                            marginBottom: 10,
-                            color: 'black'
-                        }}>Add new client</Text>
-                        <View style={styles.formContainer}>
-                            <Icon style={{
-                                textAlign: 'center',
-                                fontSize: 40
-                            }} type="FontAwesome5" name="user-edit" />
-                            <FormBuilder
-                                form={this.state.form}
-                                formValidityChanged={(e) => this.formValidityChanged(e, 1)}
-                                saveFormValues={(e) => this.setFormValues(e, 1)}></FormBuilder>
-                            <View style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                justifyContent: 'center',
-                                marginTop: 50,
-                                marginBottom: 5
-                            }}>
-                                <Image source={addressIcon} style={{
-                                    width: '20%',
-                                    height: '100%'
-                                }} resizeMode='contain' />
-                                <Text style={[styles.header, { width: '50%' }]}>Address</Text>
-                            </View>
-                            <FormBuilder
-                                form={this.state.form2}
-                                formValidityChanged={(e) => this.formValidityChanged(e, 2)}
-                                saveFormValues={(e) => this.setFormValues(e, 2)}></FormBuilder>
-                            <Button rounded style={styles.Button} disabled={!this.state.formValidity || !this.state.form2Validity} onPress={this.onSubmit}>
-                                <Text style={styles.ButtonText}>
-                                    Save
+            <Drawer ref={(ref) => this.drawer = ref}>
+            <Header
+                heading="Add New Client"
+                iconTypeLeft="Entypo"
+                iconNameLeft="menu"
+                iconTypeRight="MaterialIcons"
+                iconNameRight="arrow-back"
+                rightButtonClicked={() => this.props.history.goBack()}
+                leftButtonClicked={() => this.drawer.openDrawer()}
+            >
+            </Header>
+                <View style={styles.container}>
+                    <View>
+                        <ScrollView>
+                            <View style={styles.formContainer}>
+                                <Icon style={{
+                                    textAlign: 'center',
+                                    fontSize: 40
+                                }} type="FontAwesome5" name="user-edit" />
+                                <FormBuilder
+                                    form={this.state.form}
+                                    formValidityChanged={(e) => this.formValidityChanged(e, 1)}
+                                    saveFormValues={(e) => this.setFormValues(e, 1)}></FormBuilder>
+                                <View style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    justifyContent: 'center',
+                                    marginTop: 50,
+                                    marginBottom: 5
+                                }}>
+                                    <Image source={addressIcon} style={{
+                                        width: '20%',
+                                        height: '100%'
+                                    }} resizeMode='contain' />
+                                    <Text style={[styles.header, { width: '50%' }]}>Address</Text>
+                                </View>
+                                <FormBuilder
+                                    form={this.state.form2}
+                                    formValidityChanged={(e) => this.formValidityChanged(e, 2)}
+                                    saveFormValues={(e) => this.setFormValues(e, 2)}></FormBuilder>
+                                <Button rounded style={styles.Button} disabled={!this.state.formValidity || !this.state.form2Validity} onPress={this.onSubmit}>
+                                    <Text style={styles.ButtonText}>
+                                        Save
                         </Text>
-                            </Button>
-                        </View>
-                    </ScrollView>
+                                </Button>
+                            </View>
+                        </ScrollView>
+                    </View>
                 </View>
-            </View>
+            </Drawer>
         );
     }
 }

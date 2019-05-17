@@ -5,12 +5,17 @@ import {
     Button,
     Icon
 } from 'native-base';
+import {
+    responsiveHeight,
+    responsiveWidth
+} from "react-native-responsive-dimensions";
 
 import allOrders from '../../main/Images/allOrders.png';
 import success from '../../main/Images/success.png';
 import failed from '../../main/Images/failed.png';
 import newOrder from '../../main/Images/new.png';
 import proccessing from '../../main/Images/proccessing.png';
+import Drawer from '../common/common/Drawer';
 
 
 const styles = StyleSheet.create({
@@ -29,7 +34,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         marginBottom: 15,
-        height: '20%',
+        height: responsiveHeight(15),
         justifyContent: 'center',
         alignContent: 'center',
         shadowColor: '#000',
@@ -88,7 +93,7 @@ class Home extends Component {
             {
                 displayText: 'New',
                 imageName: newOrder,
-                route: 'AllOrders'
+                route: 'SearchResult'
             },
 
         ]
@@ -119,21 +124,39 @@ class Home extends Component {
             )
         })
         return (
-
+            <Drawer ref={(ref) => this.drawer = ref}>
+                <Text onPress={() => this.drawer.openDrawer()}>hello</Text>
                 <View style={styles.container}>
-                    <Image
-                        style={styles.image}
-                        source={require('../../../../../assets/Logo.png')}
-                        resizeMode="contain" />
-                    <View style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        flexWrap: 'wrap',
-                        justifyContent: 'space-around'
-                    }}>
-                        {routes}
-                    </View>
+                    <ScrollView >
+                        <View style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            width: '100%',
+                            height: '100%'
+                        }}>
+                            <Image
+                                style={styles.image}
+                                source={require('../../../../../assets/Logo.png')}
+                                resizeMode="contain" />
+                            <View style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                flexWrap: 'wrap',
+                                justifyContent: 'space-around',
+                                width: '80%',
+                                position:'relative',
+                                left: responsiveWidth(10),
+                                top: 30,
+                                height: responsiveHeight(60)
+                            }}>
+                                {routes}
+
+                            </View>
+                        </View>
+                    </ScrollView>
                 </View>
+
+            </Drawer>
         );
     }
 }

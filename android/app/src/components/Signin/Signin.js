@@ -5,6 +5,8 @@ import {
     Button
 } from 'native-base';
 import FormBuilder from '../FormBuilder/FormBuilder';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
+import Drawer from '../common/common/Drawer';
 
 const styles = StyleSheet.create({
     container: {
@@ -31,8 +33,10 @@ const styles = StyleSheet.create({
     },
     Button: {
         backgroundColor: '#ffcf11',
-        width: '100%',
-        marginTop: 10
+        width: '40%',
+        marginTop: 10,
+        alignSelf: 'center',
+        height: responsiveHeight(5),
     },
     ButtonText: {
         position: 'relative',
@@ -56,12 +60,15 @@ class Signin extends Component {
                     value: '',
                     fieldValueName: 'value',
                     style: {
+                        backgroundColor: 'red',
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle: {
-                        width: '100%'
+                        width: '100%',
+                        marginBottom: 5
                     }
                 },
                 validationRules: {
@@ -78,13 +85,17 @@ class Signin extends Component {
                     placeholder: 'Password',
                     value: '',
                     fieldValueName: 'value',
+                    secureTextEntry: true,
                     style: {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle: {
-                        width: '100%'
+                        width: '100%',
+                        height: responsiveHeight(6),
+                        marginBottom: 5
                     }
                 },
                 validationRules: {
@@ -95,7 +106,8 @@ class Signin extends Component {
             },
         },
         formValidity: false,
-        formValues: {}
+        formValues: {},
+        opened: false
     };
 
     formValidityChanged = (value) => {
@@ -118,51 +130,54 @@ class Signin extends Component {
     render() {
         console.log('signin')
         return (
-            <View style={styles.container}>
-                <ScrollView>
-                    <View>
-                        <Image
-                            style={{ width: '50%', height: 150, position: 'relative', left: '25%' }}
-                            source={require('../../../../../assets/Logo.png')}
-                            resizeMode="contain" />
-                        <Text style={[styles.header,
-                        {
-                            textAlign: 'center',
-                            position: 'relative',
-                            bottom: 10
-                        }]}>Welcome</Text>
-                    </View>
-                    <View style={styles.formContainer}>
+            <Drawer ref={(ref) => this.drawer = ref }>
+                <Text onPress={() => this.drawer.openDrawer()}>hello</Text>
+                <View style={styles.container}>
+                    <ScrollView>
                         <View>
-                            <Text style={styles.header}>Sign in</Text>
-                            <Text>to get started</Text>
+                            <Image
+                                style={{ width: '50%', height: 150, position: 'relative', left: '25%' }}
+                                source={require('../../../../../assets/Logo.png')}
+                                resizeMode="contain" />
+                            <Text style={[styles.header,
+                            {
+                                textAlign: 'center',
+                                position: 'relative',
+                                bottom: 10
+                            }]}>Welcome</Text>
                         </View>
-                        <FormBuilder
-                            form={this.state.form}
-                            formValidityChanged={this.formValidityChanged}
-                            saveFormValues={this.setFormValues}></FormBuilder>
-                        <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
-                            <Text style={styles.ButtonText}>Sign In</Text>
-                        </Button>
+                        <View style={styles.formContainer}>
+                            <View>
+                                <Text style={styles.header}>Sign in</Text>
+                                <Text>to get started</Text>
+                            </View>
+                            <FormBuilder
+                                form={this.state.form}
+                                formValidityChanged={this.formValidityChanged}
+                                saveFormValues={this.setFormValues}></FormBuilder>
+                            <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                                <Text style={styles.ButtonText}>Sign In</Text>
+                            </Button>
+                            <Text style={{
+                                textAlign: 'center',
+                                color: 'black',
+                                marginTop: 5
+                            }}>Forget your password?</Text>
+                        </View>
                         <Text style={{
                             textAlign: 'center',
                             color: 'black',
-                            marginTop: 5
-                        }}>Forget your password?</Text>
-                    </View>
-                    <Text style={{
-                        textAlign: 'center',
-                        color: 'black',
-                        marginTop: 5,
-                        marginBottom: 20
+                            marginTop: 5,
+                            marginBottom: 20
 
-                    }}>Don't have an account? <Text
-                        onPress={() => this.props.history.push('/Signup')}
-                        style={{
-                            fontWeight: 'bold'
-                        }}>Sign Up</Text></Text>
-                </ScrollView>
-            </View>
+                        }}>Don't have an account? <Text
+                            onPress={() => this.props.history.push('/Signup')}
+                            style={{
+                                fontWeight: 'bold'
+                            }}>Sign Up</Text></Text>
+                    </ScrollView>
+                </View>
+            </Drawer>
         );
     }
 }

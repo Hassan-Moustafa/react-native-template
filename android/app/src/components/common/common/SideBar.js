@@ -23,17 +23,17 @@ export default class SideBar extends Component {
             {
                 text: 'Notifications',
                 icon: notficationIcon,
-                route: 'NewClient'
+                route: 'Notification'
             },
             {
                 text: 'Help',
                 icon: helpIcon,
-                route: 'Home'
+                route: 'Help'
             },
             {
                 text: 'Setting',
                 icon: settingsIcon,
-                route: 'Home'
+                route: 'Settings'
             },
             {
                 text: 'Log out',
@@ -47,8 +47,6 @@ export default class SideBar extends Component {
         this.props.setScreen();
     }
     render() {
-
-        console.log(this.props)
         let navItems = this.state.NavItems.map((item, index) => {
             return (
 
@@ -67,11 +65,11 @@ export default class SideBar extends Component {
                     <Image source={item.icon} style={{
                         width: '8%'
                     }} resizeMode='contain' />
-                    <Link to={`${item.route}`} onPress={this.itemClicked} underlayColor="#f0f4f7" replace={true} style={{marginLeft: 15}}>
+                    <Link to={`${item.route}`} onPress={() => this.itemClicked()} underlayColor="#f0f4f7" style={{ marginLeft: 15 }}>
                         <Text style={{
                             color: 'white',
                             textAlignVertical: 'center',
-                            marginTop:16,
+                            marginTop: 16,
                         }}>{item.text}</Text>
                     </Link>
                 </View>
@@ -79,7 +77,7 @@ export default class SideBar extends Component {
         });
         return (
             <View>
-                <Text style={styles.cancelButton} onPress={this.props.closeDrawer}>X</Text>
+                <Text style={styles.cancelButton} onPress={this.props.setScreen}>X</Text>
 
                 <View style={
                     {
@@ -89,14 +87,27 @@ export default class SideBar extends Component {
                         alignContent: 'center'
                     }
                 }>
-                    <Image source={userIcon} style={{
-                        width: '13%'
-                    }} resizeMode='contain' />
-                    <Text style={{
-                        color: 'white',
-                        textAlignVertical: 'center',
-                        marginLeft: 15
-                    }}>Ahmed</Text>
+                    <Link to={'/Profile'}>
+                        <View style={
+                            {
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-start',
+                                alignContent: 'center',
+                                marginLeft: 15,
+                                width: '80%'
+                            }
+                        }>
+                            <Image source={userIcon} style={{
+                                width: '30%'
+                            }} resizeMode='contain' />
+                            <Text style={{
+                                color: 'white',
+                                textAlignVertical: 'center',
+                                marginLeft: 15
+                            }}>Ahmed</Text>
+                        </View>
+                    </Link>
                 </View>
 
 

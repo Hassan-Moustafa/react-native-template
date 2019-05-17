@@ -5,6 +5,7 @@ import {
     Button
 } from 'native-base';
 import FormBuilder from '../FormBuilder/FormBuilder';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const styles = StyleSheet.create({
     container: {
@@ -32,8 +33,10 @@ const styles = StyleSheet.create({
     },
     Button: {
         backgroundColor: '#ffcf11',
-        width: '100%',
-        marginTop: 10
+        width: '40%',
+        marginTop: 10,
+        height: responsiveHeight(5),
+        alignSelf: 'center'
     },
     ButtonText: {
         position: 'relative',
@@ -60,9 +63,12 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle:{
-                        width: '100%'
+                        width: '100%',
+                        height: responsiveHeight(6),
+                        marginBottom: 5
                     }
                 },
                 validationRules: {
@@ -84,9 +90,12 @@ class Signup extends Component {
                     wrapperStyle: {
                         backgroundColor: '#cecece',
                         borderRadius: 30,
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle:{
-                        width: '100%'
+                        width: '100%',
+                        height: responsiveHeight(6),
+                        marginBottom:5
                     }
                 },
                 validationRules: {
@@ -118,9 +127,12 @@ class Signup extends Component {
                         backgroundColor: '#cecece',
                         borderRadius: 30,
                         paddingLeft: 10,
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle:{
-                        width: '55%'
+                        width: '55%',
+                        height: responsiveHeight(6),
+                        marginBottom: 5
                     }
                 },
                 validationRules: {
@@ -141,10 +153,13 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                        height: responsiveHeight(6)
                         
                     },
                     rootWrapperStyle:{
-                        width: '45%'
+                        width: '45%',
+                        height: responsiveHeight(6),
+                        marginBottom:5
                     }
                     
                 },
@@ -166,10 +181,13 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                        height: responsiveHeight(6)
                         
                     },
                     rootWrapperStyle:{
-                        width: '55%'
+                        width: '55%',
+                        height: responsiveHeight(6),
+                        marginBottom:5
                     }
                     
                 },
@@ -191,10 +209,12 @@ class Signup extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle:{
-                        width: '45%'
+                        width: '45%',
+                        height: responsiveHeight(6),
+                        marginBottom:5
                     }
                     
                 },
@@ -212,13 +232,17 @@ class Signup extends Component {
                     placeholder: 'Password',
                     value: '',
                     fieldValueName: 'value',
+                    secureTextEntry: true,
                     style: {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
+                        height: responsiveHeight(6)
                     },
                     rootWrapperStyle:{
-                        width: '100%'
+                        width: '100%',
+                        height: responsiveHeight(6),
+                        marginBottom:5
                     }
                 },
                 validationRules: {
@@ -281,7 +305,7 @@ class Signup extends Component {
                                     marginTop: 7
                                 }}>
                                     <Text>Have an account</Text>
-                                    <Text>Sign in</Text>
+                                    <Text onPress={() => this.props.history.push('/Signin')}>Sign in</Text>
                                 </View>
                             </View>
                             <FormBuilder
