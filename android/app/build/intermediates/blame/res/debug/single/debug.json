@@ -872,6 +872,10 @@
         "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.1.0.aar\\eee90911813372b1303558df58b8d9c9\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
     },
     {
+        "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_android_app_src_main_images_proccessingorder.png.flat",
+        "source": "F:\\TemplateProject\\TemplateProject\\android\\app\\src\\main\\res\\drawable-mdpi\\android_app_src_main_images_proccessingorder.png"
+    },
+    {
         "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7998ca7d2f9f2e4dcc8ef921fc41d4b8\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
@@ -1174,6 +1178,10 @@
     {
         "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_amu_unknwown_folder.kml.flat",
         "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\android-maps-utils-0.5.aar\\9384e2853467a69bb5cf84d4c836eaf4\\res\\raw\\amu_unknwown_folder.kml"
+    },
+    {
+        "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_android_app_src_main_images_successorder.png.flat",
+        "source": "F:\\TemplateProject\\TemplateProject\\android\\app\\src\\main\\res\\drawable-mdpi\\android_app_src_main_images_successorder.png"
     },
     {
         "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
@@ -1890,6 +1898,10 @@
     {
         "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\hassan moustafa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\58f7429db365e9b81eca5ff05316d4b9\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_android_app_src_main_images_failedorder.png.flat",
+        "source": "F:\\TemplateProject\\TemplateProject\\android\\app\\src\\main\\res\\drawable-mdpi\\android_app_src_main_images_failedorder.png"
     },
     {
         "merged": "F:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_android_app_src_main_images_proccessing.png.flat",

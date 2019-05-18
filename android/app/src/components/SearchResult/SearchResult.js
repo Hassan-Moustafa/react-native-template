@@ -8,6 +8,7 @@ import {
 import Drawer from '../common/common/Drawer';
 import Header from '../common/common/Header';
 import FormBuilder from '../FormBuilder/FormBuilder';
+import Tab from '../common/common/Tab';
 
 export default class SearchResult extends Component {
 
@@ -129,8 +130,8 @@ export default class SearchResult extends Component {
                     heading="Search Result"
                     iconTypeLeft="Entypo"
                     iconNameLeft="menu"
-                    iconTypeRight="MaterialIcons"
-                    iconNameRight="arrow-back"
+                    iconTypeRight="AntDesign"
+                    iconNameRight="back"
                     rightButtonClicked={() => this.props.history.goBack()}
                     leftButtonClicked={() => this.drawer.openDrawer()}
                 >
@@ -156,8 +157,8 @@ export default class SearchResult extends Component {
                             </View>
                         </ScrollView>
                     </View>
+                    <Tab />
                 </View>
-
             </Drawer>
         );
     }
@@ -165,10 +166,9 @@ export default class SearchResult extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignContent: 'center',
         flex: 1
     },

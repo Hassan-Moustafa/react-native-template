@@ -38,7 +38,7 @@ export default class SideBar extends Component {
             {
                 text: 'Log out',
                 icon: logoutIcon,
-                route: 'Home'
+                route: 'Logout'
             }
         ]
     }

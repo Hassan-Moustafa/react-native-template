@@ -9,7 +9,6 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-nat
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',

@@ -10,13 +10,14 @@ import Header from '../common/common/Header';
 import Drawer from '../common/common/Drawer';
 import RadioButtons from '../common/common/RadioButton';
 import FormBuilder from '../FormBuilder/FormBuilder';
+import Tab from '../common/common/Tab';
+
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignContent: 'center',
         flex: 1
     },
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         color: 'black',
         borderRadius: 10,
         marginTop: 15,
-        height: responsiveHeight(80),
+        height: responsiveHeight(70),
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
@@ -169,23 +170,22 @@ class Settings extends Component {
     }
 
     render() {
-        alert(this.state.formValidity)
         return (
             <Drawer ref={(ref) => this.drawer = ref}>
                 <Header
                     heading="Settings"
                     iconTypeLeft="Entypo"
                     iconNameLeft="menu"
-                    iconTypeRight="MaterialIcons"
-                    iconNameRight="arrow-back"
+                    iconTypeRight="AntDesign"
+                    iconNameRight="back"
                     rightButtonClicked={() => this.props.history.goBack()}
                     leftButtonClicked={() => this.drawer.openDrawer()}
                 >
                 </Header>
                 <View style={styles.container}>
                     <View>
-                        <ScrollView>
-                            <View style={styles.message}>
+                        <View style={styles.message}>
+                            <ScrollView>
                                 <Text style={styles.header}>Language</Text>
                                 <RadioButtons choices={
                                     [{
@@ -216,9 +216,10 @@ class Settings extends Component {
                                 <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
                                     <Text style={styles.ButtonText}>Save</Text>
                                 </Button>
-                            </View>
-                        </ScrollView>
+                            </ScrollView>
+                        </View>
                     </View>
+                    <Tab />
                 </View>
             </Drawer>
         );

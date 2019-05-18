@@ -10,10 +10,9 @@ import Drawer from '../common/common/Drawer';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         flex: 1,
     },
     formContainer: {
@@ -27,21 +26,21 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     header: {
-        fontSize: 25,
+        fontSize: responsiveFontSize(3),
         fontWeight: 'bold',
         color: 'black'
     },
     Button: {
         backgroundColor: '#ffcf11',
         width: '40%',
-        marginTop: 10,
+        marginTop: 30,
         alignSelf: 'center',
         height: responsiveHeight(5),
     },
     ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.2),
         color: 'black',
         width: '100%',
         textAlign: 'center'
@@ -131,7 +130,6 @@ class Signin extends Component {
         console.log('signin')
         return (
             <Drawer ref={(ref) => this.drawer = ref }>
-                <Text onPress={() => this.drawer.openDrawer()}>hello</Text>
                 <View style={styles.container}>
                     <ScrollView>
                         <View>

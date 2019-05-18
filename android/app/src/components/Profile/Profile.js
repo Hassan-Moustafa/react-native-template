@@ -11,16 +11,17 @@ import {
 import FormBuilder from '../FormBuilder/FormBuilder';
 import Header from '../common/common/Header';
 import Drawer from '../common/common/Drawer';
+import Tab from '../common/common/Tab';
+
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         flex: 1,
         position: 'relative',
-        
+
     },
     formContainer: {
         display: 'flex',
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         left: '5%',
         padding: 20,
         borderRadius: 5,
-        marginBottom:20
+        marginBottom: 20
     },
     header: {
         fontSize: 25,
@@ -334,16 +335,16 @@ class Profile extends Component {
     render() {
         return (
             <Drawer ref={(ref) => this.drawer = ref}>
-            <Header
-                heading="Profile"
-                iconTypeLeft="Entypo"
-                iconNameLeft="menu"
-                iconTypeRight="MaterialIcons"
-                iconNameRight="arrow-back"
-                rightButtonClicked={() => this.props.history.goBack()}
-                leftButtonClicked={() => this.drawer.openDrawer()}
-            >
-            </Header>
+                <Header
+                    heading="Profile"
+                    iconTypeLeft="Entypo"
+                    iconNameLeft="menu"
+                    iconTypeRight="AntDesign"
+                    iconNameRight="back"
+                    rightButtonClicked={() => this.props.history.goBack()}
+                    leftButtonClicked={() => this.drawer.openDrawer()}
+                >
+                </Header>
                 <View style={styles.container}>
                     <View>
                         <ScrollView>
@@ -381,6 +382,7 @@ class Profile extends Component {
                             </View>
                         </ScrollView>
                     </View>
+                    <Tab />
                 </View>
             </Drawer>
         );

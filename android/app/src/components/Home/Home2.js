@@ -9,6 +9,8 @@ import {
     responsiveHeight,
     responsiveWidth
 } from "react-native-responsive-dimensions";
+import HeaderApp from "../common/common/OrdersHeader";
+
 
 import allOrders from '../../main/Images/allOrders.png';
 import success from '../../main/Images/success.png';
@@ -17,10 +19,8 @@ import newOrder from '../../main/Images/new.png';
 import proccessing from '../../main/Images/proccessing.png';
 import Drawer from '../common/common/Drawer';
 
-
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
@@ -78,17 +78,17 @@ class Home extends Component {
             {
                 displayText: 'Success',
                 imageName: success,
-                route: 'AllOrders'
+                route: 'SuccessOrders'
             },
             {
                 displayText: 'Processing',
                 imageName: proccessing,
-                route: 'AllOrders'
+                route: 'ProcessingOrders'
             },
             {
                 displayText: 'Failed',
                 imageName: failed,
-                route: 'AllOrders'
+                route: 'FailedOrders'
             },
             {
                 displayText: 'New',
@@ -125,7 +125,17 @@ class Home extends Component {
         })
         return (
             <Drawer ref={(ref) => this.drawer = ref}>
-                <Text onPress={() => this.drawer.openDrawer()}>hello</Text>
+                <HeaderApp
+                    heading="Log out"
+                    history={this.props.history}
+                    iconTypeLeft="Ionicons"
+                    iconNameLeft="ios-menu"
+                    iconTypeRight="Ionicons"
+                    iconNameRight="ios-notifications-outline"
+                    hideRightText={true}
+                    rightButtonClicked={() => this.props.history.goBack()}
+                    leftButtonClicked={() => this.drawer.openDrawer()}
+                />
                 <View style={styles.container}>
                     <ScrollView >
                         <View style={{
@@ -144,7 +154,7 @@ class Home extends Component {
                                 flexWrap: 'wrap',
                                 justifyContent: 'space-around',
                                 width: '80%',
-                                position:'relative',
+                                position: 'relative',
                                 left: responsiveWidth(10),
                                 top: 30,
                                 height: responsiveHeight(60)

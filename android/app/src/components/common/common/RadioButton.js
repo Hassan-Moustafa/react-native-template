@@ -3,7 +3,8 @@ import { View, ImageBackground, StyleSheet, Image, TouchableWithoutFeedback } fr
 import { Text, Icon, Button } from "native-base";
 import {
     responsiveHeight,
-    responsiveWidth
+    responsiveWidth,
+    responsiveFontSize
 } from "react-native-responsive-dimensions";
 export default class RadioButtons extends Component {
     constructor(props){
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         borderRadius: 30
     },
     choiceText: {
-        fontSize: 18
+        fontSize: responsiveFontSize(2)
     }
 
 })

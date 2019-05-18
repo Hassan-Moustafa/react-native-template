@@ -8,13 +8,13 @@ import {
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import Header from '../common/common/Header';
 import Drawer from '../common/common/Drawer';
+import Tab from '../common/common/Tab';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignContent: 'center',
         flex: 1
     },
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         color: 'black',
         borderRadius: 10,
         marginTop: 15,
-        height: responsiveHeight(80),
+        height: responsiveHeight(70),
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -74,8 +74,8 @@ class Help extends Component {
                     heading="Help"
                     iconTypeLeft="Entypo"
                     iconNameLeft="menu"
-                    iconTypeRight="MaterialIcons"
-                    iconNameRight="arrow-back"
+                    iconTypeRight="AntDesign"
+                    iconNameRight="back"
                     rightButtonClicked={() => this.props.history.goBack()}
                     leftButtonClicked={() => this.drawer.openDrawer()}
                 >
@@ -101,6 +101,7 @@ class Help extends Component {
                             </View>
                         </ScrollView>
                     </View>
+                    <Tab />
                 </View>
             </Drawer>
         );

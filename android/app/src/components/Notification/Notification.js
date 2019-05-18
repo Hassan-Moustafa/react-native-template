@@ -7,6 +7,7 @@ import {
 } from "react-native-responsive-dimensions";
 import Drawer from '../common/common/Drawer';
 import Header from '../common/common/Header';
+import Tab from '../common/common/Tab';
 
 export default class Notification extends Component {
 
@@ -19,8 +20,8 @@ export default class Notification extends Component {
                     heading="Notification"
                     iconTypeLeft="Entypo"
                     iconNameLeft="menu"
-                    iconTypeRight="MaterialIcons"
-                    iconNameRight="arrow-back"
+                    iconTypeRight="AntDesign"
+                    iconNameRight="back"
                     rightButtonClicked={() => this.props.history.goBack()}
                     leftButtonClicked={() => this.drawer.openDrawer()}
                 >
@@ -56,8 +57,8 @@ export default class Notification extends Component {
                             <Text style={styles.choiceText}>Notification 4</Text>
                         </View>
                     </View>
+                    <Tab />
                 </View>
-
             </Drawer>
         );
     }
@@ -65,12 +66,11 @@ export default class Notification extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcf11',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignContent: 'center',
-        flex: 1
+        flex: 1,
     },
     wrapper: {
         display: 'flex',
