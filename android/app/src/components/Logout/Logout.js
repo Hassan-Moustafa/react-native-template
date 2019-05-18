@@ -4,11 +4,13 @@ import { Text, ScrollView } from "react-native";
 import HeaderApp from "../common/common/Header";
 import {
   responsiveHeight,
-  responsiveWidth
+  responsiveWidth,
+  responsiveFontSize
 } from "react-native-responsive-dimensions";
 import { GlobalStyles } from "../../globalStyles/globalStyles";
 import Drawer from '../common/common/Drawer';
 import Tab from '../common/common/Tab';
+
 
 
 class Logout extends Component {
@@ -60,10 +62,10 @@ class Logout extends Component {
                 >
                   <Text
                     style={{
-                      color: 'balck',
+                      color: 'black',
                       fontWeight: 'bold',
                       textAlign: 'center',
-                      fontSize: 25
+                      fontSize: responsiveFontSize(3)
                     }}
                   >Are you sure ?</Text>
                   <View
@@ -77,18 +79,18 @@ class Logout extends Component {
                   >
                     <Button
                       block
-                      rounded
-                      style={{ backgroundColor: GlobalStyles.secondColor, width: responsiveWidth(15) }}
+                      
+                      style={{ backgroundColor: GlobalStyles.secondColor, width: responsiveWidth(15), borderRadius: 15 }}
                       onPress={() => this.props.history.push('/Signin')}
                     >
                       <Text>Yes</Text>
                     </Button>
                     <Button
                       block
-                      rounded
-                      style={{ backgroundColor: GlobalStyles.secondColor, width: responsiveWidth(15) }}
+                      
+                      style={{ backgroundColor: GlobalStyles.secondColor, width: responsiveWidth(15), borderRadius: 15 }}
                     >
-                      <Text>NO</Text>
+                      <Text>No</Text>
                     </Button>
                   </View>
                 </View>

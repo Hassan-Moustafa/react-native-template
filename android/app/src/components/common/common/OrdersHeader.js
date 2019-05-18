@@ -35,38 +35,44 @@ class OrdersHeader extends Component {
       iconNameRight
     } = this.props;
     return (
-      <Header style={{ backgroundColor: GlobalStyles.mainColor, display: 'flex', flexDirection: 'row', height: responsiveHeight(10) }}>
-        <Left>
-          <Button onPress={this.props.leftButtonClicked} transparent>
-            <Icon
-              style={{ fontSize: 35, color: 'black' }}
-              type={iconTypeLeft}
-              name={iconNameLeft}
-            />
-          </Button>
-        </Left>
+      <Header style={{
+        backgroundColor: GlobalStyles.mainColor,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignContent: 'flex-end',
+        height: responsiveHeight(10)
+      }}>
+
+        <Button onPress={this.props.leftButtonClicked} transparent>
+          <Icon
+            style={{ fontSize: 35, color: 'black' }}
+            type={iconTypeLeft}
+            name={iconNameLeft}
+          />
+        </Button>
+
         <Item
-          style={{ width: responsiveWidth(61), height: '60%', marginTop: 12, backgroundColor: "white" }}
-          rounded>
-          <Input placeholder="search" />
+          style={{ width: responsiveWidth(61), borderRadius: 15, height: '60%', marginTop: 12, backgroundColor: "white" }}>
+          <Input placeholder="search"/>
           <Icon name="magnifier" type="SimpleLineIcons" />
         </Item>
-        <Right>
-          <View
-            style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}
-          >
-            <Button transparent>
-              <Icon
-                style={{ fontSize: 30, color: 'black'}}
-                type={iconTypeRight}
-                name={iconNameRight}
-              />
-            </Button>
-             { !this.props.hideRightText ? <Text>
-              Filter
-          </Text> : null }
-          </View>
-        </Right>
+
+        <View
+          style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}
+        >
+          <Button transparent style={{margin: 0}}>
+            <Icon
+              style={{ fontSize: responsiveFontSize(3.5), color: 'black' ,margin: 0}}
+              type={iconTypeRight}
+              name={iconNameRight}
+            />
+          </Button>
+          {!this.props.hideRightText ? <Text style={{margin: 0}}>
+            Filter
+          </Text> : null}
+        </View>
+
         <View />
       </Header>
     );

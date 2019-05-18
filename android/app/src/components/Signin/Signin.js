@@ -33,9 +33,10 @@ const styles = StyleSheet.create({
     Button: {
         backgroundColor: '#ffcf11',
         width: '40%',
-        marginTop: 30,
+        marginTop: 35,
         alignSelf: 'center',
         height: responsiveHeight(5),
+        borderRadius: 15
     },
     ButtonText: {
         position: 'relative',
@@ -153,7 +154,7 @@ class Signin extends Component {
                                 form={this.state.form}
                                 formValidityChanged={this.formValidityChanged}
                                 saveFormValues={this.setFormValues}></FormBuilder>
-                            <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                            <Button style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
                                 <Text style={styles.ButtonText}>Sign In</Text>
                             </Button>
                             <Text style={{

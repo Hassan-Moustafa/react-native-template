@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     width: responsiveWidth(90),
     alignSelf: "center",
     marginTop: 5,
-    paddingTop: 15,
-    paddingBottom: 15,
+    paddingTop: 5,
+    paddingBottom: 5,
   }
 })
 export default Orders;

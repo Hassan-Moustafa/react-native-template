@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     header: {
-        fontSize: 25,
+        fontSize: responsiveFontSize(3),
         fontWeight: 'bold',
         color: 'black',
         textAlign: 'center'
@@ -42,14 +42,15 @@ const styles = StyleSheet.create({
     Button: {
         backgroundColor: '#ffcf11',
         width: '40%',
-        marginTop: 10,
+        marginTop: 20,
         height: responsiveHeight(5),
         alignSelf: 'center',
+        borderRadius: 15
     },
     ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: responsiveHeight(2.2),
         color: 'black',
         width: '100%',
         textAlign: 'center'
@@ -93,7 +94,7 @@ class Help extends Component {
                                 }}
                                     placeholder="Type your question"
                                     onChangeText={this.inputChanged}></Textarea>
-                                <Button rounded style={styles.Button} disabled={this.state.question.trim() === ''}>
+                                <Button style={styles.Button} disabled={this.state.question.trim() === ''}>
                                     <Text style={styles.ButtonText}>
                                         Save
                                 </Text>

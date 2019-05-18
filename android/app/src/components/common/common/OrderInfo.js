@@ -25,11 +25,12 @@ class OrderInfo extends Component {
           style={{
             borderRadius: responsiveWidth(5),
             backgroundColor: "#cecece",
-            height: responsiveHeight(18),
+            // height: responsiveHeight(18),
             width: responsiveWidth(85),
             alignSelf: "center",
             marginTop: responsiveHeight(2),
-            paddingTop: 10
+            paddingTop: 10,
+            paddingBottom: 10
 
           }}
         >

@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignContent: 'center',
-        flex: 1
+        flex: 1,
     },
     header: {
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.2),
         fontWeight: 'bold',
         color: 'black',
         textAlign: 'left'
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         color: 'black',
         borderRadius: 10,
         marginTop: 15,
-        height: responsiveHeight(70),
+        height: responsiveHeight(72),
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
@@ -45,14 +45,15 @@ const styles = StyleSheet.create({
     Button: {
         backgroundColor: '#ffcf11',
         width: '40%',
-        marginTop: 10,
+        marginTop: 25,
         height: responsiveHeight(5),
         alignSelf: 'center',
+        borderRadius: 15
     },
     ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize:responsiveFontSize(2.2),
         color: 'black',
         width: '100%',
         textAlign: 'center'
@@ -76,11 +77,11 @@ class Settings extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5)
                     },
                     rootWrapperStyle: {
                         width: '100%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5),
                         marginBottom: 5
                     }
                 },
@@ -103,11 +104,11 @@ class Settings extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5)
                     },
                     rootWrapperStyle: {
                         width: '100%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5),
                         marginBottom: 5
                     }
                 },
@@ -131,11 +132,11 @@ class Settings extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5)
                     },
                     rootWrapperStyle: {
                         width: '100%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5),
                         marginBottom: 5
                     }
                 },
@@ -213,7 +214,7 @@ class Settings extends Component {
                                     form={this.state.form}
                                     formValidityChanged={this.formValidityChanged}
                                     saveFormValues={this.setFormValues}></FormBuilder>
-                                <Button rounded style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
+                                <Button style={styles.Button} disabled={!this.state.formValidity} onPress={this.onSubmit}>
                                     <Text style={styles.ButtonText}>Save</Text>
                                 </Button>
                             </ScrollView>

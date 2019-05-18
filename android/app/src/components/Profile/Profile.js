@@ -34,21 +34,22 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     header: {
-        fontSize: 25,
+        fontSize: responsiveFontSize(3),
         fontWeight: 'bold',
         color: 'black'
     },
     Button: {
         backgroundColor: '#ffcf11',
         width: '50%',
-        marginTop: 10,
+        marginTop: 30,
         alignSelf: 'center',
-        height: responsiveHeight(5),
+        height: responsiveHeight(5.2),
+        borderRadius: 15
     },
     ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.2),
         color: 'black',
         width: '100%',
         textAlign: 'center'
@@ -70,12 +71,12 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
                     },
                     rootWrapperStyle: {
                         width: '100%',
                         marginBottom: 5,
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
                     }
                 },
                 validationRules: {
@@ -96,12 +97,12 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
                     },
                     rootWrapperStyle: {
                         width: '100%',
                         marginBottom: 5,
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
                     }
                 },
                 validationRules: {
@@ -126,13 +127,13 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     },
                     rootWrapperStyle: {
                         width: '100%',
                         marginBottom: 5,
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     }
                 },
@@ -167,12 +168,12 @@ class Profile extends Component {
                         backgroundColor: '#cecece',
                         borderRadius: 30,
                         paddingLeft: 10,
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     },
                     rootWrapperStyle: {
                         width: '50%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5.2),
                         marginBottom: 5
 
                     }
@@ -195,12 +196,12 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     },
                     rootWrapperStyle: {
                         width: '50%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5.2),
                         marginBottom: 5
 
                     }
@@ -223,12 +224,12 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     },
                     rootWrapperStyle: {
                         width: '50%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5.2),
                         marginBottom: 5
 
 
@@ -252,12 +253,12 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     },
                     rootWrapperStyle: {
                         width: '50%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5.2),
                         marginBottom: 5
 
 
@@ -281,12 +282,12 @@ class Profile extends Component {
                     },
                     wrapperStyle: {
                         backgroundColor: '#cecece',
-                        height: responsiveHeight(6)
+                        height: responsiveHeight(5.2)
 
                     },
                     rootWrapperStyle: {
                         width: '100%',
-                        height: responsiveHeight(6),
+                        height: responsiveHeight(5.2),
                         marginBottom: 5
                     }
                 },
@@ -351,7 +352,7 @@ class Profile extends Component {
                             <View style={styles.formContainer}>
                                 <Icon style={{
                                     textAlign: 'center',
-                                    fontSize: 40
+                                    fontSize: responsiveFontSize(5)
                                 }} type="FontAwesome5" name="user-edit" />
                                 <FormBuilder
                                     form={this.state.form}
@@ -374,7 +375,7 @@ class Profile extends Component {
                                     form={this.state.form2}
                                     formValidityChanged={(e) => this.formValidityChanged(e, 2)}
                                     saveFormValues={(e) => this.setFormValues(e, 2)}></FormBuilder>
-                                <Button rounded style={styles.Button} disabled={!this.state.formValidity || !this.state.form2Validity} onPress={this.onSubmit}>
+                                <Button style={styles.Button} disabled={!this.state.formValidity || !this.state.form2Validity} onPress={this.onSubmit}>
                                     <Text style={styles.ButtonText}>
                                         Save
                         </Text>

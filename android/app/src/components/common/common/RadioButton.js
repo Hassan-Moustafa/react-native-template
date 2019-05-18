@@ -53,9 +53,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: '#cecece',
-        padding: 10,
+        paddingTop: 3,
+        paddingLeft: 10,
+        paddingRight: 10,
         margin: 5,
-        borderRadius: 30
+        borderRadius: 30,
+        height: responsiveHeight(5)
     },
     choiceText: {
         fontSize: responsiveFontSize(2)
