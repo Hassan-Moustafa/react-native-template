@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Image } from 'react-native'
+import { Text, ScrollView, StyleSheet, Image, BackHandler } from 'react-native'
 import {
     View,
     Button
@@ -33,6 +33,20 @@ const styles = StyleSheet.create({
 })
 
 class SuccessScreen extends Component {
+
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress',this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
+    }
+
     render() {
         return (
             <View style={styles.container}>

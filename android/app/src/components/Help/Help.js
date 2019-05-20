@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Image } from 'react-native'
+import { Text, ScrollView, StyleSheet, Image, BackHandler } from 'react-native'
 import {
     View,
     Button,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignContent: 'center',
-        flex: 1
+        height: '90%'
     },
     header: {
         fontSize: responsiveFontSize(3),
@@ -61,6 +61,19 @@ class Help extends Component {
 
     state = {
         question: ''
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress',this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
     }
 
     inputChanged = (value) => {

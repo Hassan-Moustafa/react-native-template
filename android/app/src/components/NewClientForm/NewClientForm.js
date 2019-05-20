@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Image } from 'react-native';
+import { Text, ScrollView, StyleSheet, Image , BackHandler} from 'react-native';
 import addressIcon from '../../main/Images/address.png';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        flex: 1,
+        height: '90%',
         position: 'relative'
     },
     formContainer: {
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '90%',
         position: 'relative',
+        height: responsiveHeight(75),
         left: '5%',
         padding: 20,
         borderRadius: 5
@@ -303,6 +304,19 @@ class NewClientForm extends Component {
         form2Values: {},
     };
 
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
+    }
+
     formValidityChanged = (value, formNumber) => {
         if (formNumber === 1) {
             this.setState({
@@ -353,7 +367,7 @@ class NewClientForm extends Component {
                             <View style={styles.formContainer}>
                                 <Icon style={{
                                     textAlign: 'center',
-                                    fontSize: 40
+                                    fontSize: responsiveFontSize(5)
                                 }} type="FontAwesome5" name="user-edit" />
                                 <FormBuilder
                                     form={this.state.form}
@@ -363,7 +377,7 @@ class NewClientForm extends Component {
                                     display: 'flex',
                                     flexDirection: 'row',
                                     justifyContent: 'center',
-                                    marginTop: 50,
+                                    marginTop: responsiveHeight(5),
                                     marginBottom: 5
                                 }}>
                                     <Image source={addressIcon} style={{

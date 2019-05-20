@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { View, ScrollView, ImageBackground, StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
+import { View, ScrollView, ImageBackground, StyleSheet, Image, BackHandler, TouchableWithoutFeedback } from "react-native";
 import { Text, Icon, Button } from "native-base";
-import {
-    responsiveHeight,
-    responsiveWidth
-} from "react-native-responsive-dimensions";
 import Drawer from '../common/common/Drawer';
 import Header from '../common/common/Header';
 import FormBuilder from '../FormBuilder/FormBuilder';
 import Tab from '../common/common/Tab';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
 export default class SearchResult extends Component {
 
@@ -51,7 +48,6 @@ export default class SearchResult extends Component {
                     placeholder: 'Delivery value',
                     value: '',
                     fieldValueName: 'value',
-                    secureTextEntry: true,
                     style: {
                     },
                     wrapperStyle: {
@@ -79,7 +75,6 @@ export default class SearchResult extends Component {
                     placeholder: 'Subtotal',
                     value: '',
                     fieldValueName: 'value',
-                    secureTextEntry: true,
                     style: {
                     },
                     wrapperStyle: {
@@ -102,6 +97,19 @@ export default class SearchResult extends Component {
         formValidity: false,
         formValues: {},
         opened: false
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress',this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
     }
 
 
@@ -143,7 +151,7 @@ export default class SearchResult extends Component {
                                 <Text>Ahmed Mohamed</Text>
                                 <Text>01062548932</Text>
                                 <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-                                <Button rounded style={styles.Button}>
+                                <Button style={styles.Button}>
                                     <Text style={styles.ButtonText}>Edit</Text>
                                 </Button>
                                 <Text style={styles.header}>Order Details</Text>
@@ -151,7 +159,7 @@ export default class SearchResult extends Component {
                                     form={this.state.form}
                                     formValidityChanged={this.formValidityChanged}
                                     saveFormValues={this.setFormValues}></FormBuilder>
-                                <Button rounded style={[styles.Button, { width: '60%' }]} >
+                                <Button style={[styles.Button, { width: '60%' }]} >
                                     <Text style={styles.ButtonText}>Add new task</Text>
                                 </Button>
                             </View>
@@ -170,7 +178,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignContent: 'center',
-        flex: 1
+        height: '90%'
     },
     wrapper: {
         display: 'flex',
@@ -183,34 +191,24 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 30,
     },
-    notification: {
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: '#cecece',
-        padding: 10,
-        margin: 5,
-        borderRadius: 30
-    },
-    choiceText: {
-        fontSize: 18
-    },
     Button: {
         backgroundColor: '#ffcf11',
         width: '40%',
-        marginTop: 10,
+        marginTop: 30,
         alignSelf: 'center',
         height: responsiveHeight(5),
+        borderRadius: 15
     },
     ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: responsiveFontSize(2.2),
         color: 'black',
         width: '100%',
         textAlign: 'center'
     },
     header: {
-        fontSize: 25,
+        fontSize: responsiveFontSize(3),
         fontWeight: 'bold',
         color: 'black',
         textAlign: 'center',

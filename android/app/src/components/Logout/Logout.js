@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Button, Card } from "native-base";
-import { Text, ScrollView } from "react-native";
+import { Text, ScrollView, BackHandler } from "react-native";
 import HeaderApp from "../common/common/Header";
 import {
   responsiveHeight,
@@ -15,6 +15,19 @@ import Tab from '../common/common/Tab';
 
 class Logout extends Component {
   state = {};
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  handleBackPress = () => {
+    this.props.history.goBack();
+    return true;
+}
 
   render() {
     return (
@@ -34,7 +47,7 @@ class Logout extends Component {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            flex: 1,
+            height: '90%',
             position: 'relative'
           }
         }>
@@ -79,7 +92,7 @@ class Logout extends Component {
                   >
                     <Button
                       block
-                      
+
                       style={{ backgroundColor: GlobalStyles.secondColor, width: responsiveWidth(15), borderRadius: 15 }}
                       onPress={() => this.props.history.push('/Signin')}
                     >
@@ -87,7 +100,7 @@ class Logout extends Component {
                     </Button>
                     <Button
                       block
-                      
+
                       style={{ backgroundColor: GlobalStyles.secondColor, width: responsiveWidth(15), borderRadius: 15 }}
                     >
                       <Text>No</Text>

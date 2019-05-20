@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, ImageBackground, StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
+import { View, ImageBackground, StyleSheet, Image, TouchableWithoutFeedback, BackHandler } from "react-native";
 import { Text, Icon, Button } from "native-base";
 import {
     responsiveHeight,
@@ -11,6 +11,18 @@ import Tab from '../common/common/Tab';
 
 export default class Notification extends Component {
 
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
+    }
 
 
     render() {
@@ -57,8 +69,8 @@ export default class Notification extends Component {
                             <Text style={styles.choiceText}>Notification 4</Text>
                         </View>
                     </View>
-                    <Tab />
                 </View>
+                <Tab />
             </Drawer>
         );
     }
@@ -69,14 +81,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignContent: 'center',
-        flex: 1,
+        height: '90%',
     },
     wrapper: {
         display: 'flex',
         backgroundColor: 'white',
         width: '90%',
-        height: '80%',
+        height: responsiveHeight(70),
         position: 'relative',
         left: '5%',
         padding: 20,

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat May 18 22:21:31 EET 2019
+#Sun May 19 02:22:00 EET 2019
 5.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 42.base=F\:\\TemplateProject\\TemplateProject\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 22.path=lib/x86/libglog.so

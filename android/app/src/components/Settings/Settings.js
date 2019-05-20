@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Image } from 'react-native'
+import { Text, ScrollView, StyleSheet, Image, BackHandler } from 'react-native'
 import {
     View,
     Button,
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignContent: 'center',
-        flex: 1,
+        height: '90%',
     },
     header: {
         fontSize: responsiveFontSize(2.2),
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
         padding: 15,
         color: 'black',
         borderRadius: 10,
-        marginTop: 15,
         height: responsiveHeight(72),
         display: 'flex',
         flexDirection: 'column',
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
     ButtonText: {
         position: 'relative',
         fontWeight: 'bold',
-        fontSize:responsiveFontSize(2.2),
+        fontSize: responsiveFontSize(2.2),
         color: 'black',
         width: '100%',
         textAlign: 'center'
@@ -168,6 +167,19 @@ class Settings extends Component {
     onSubmit = () => {
         console.log('submitted data ', this.state.formValues);
         this.props.history.push('/Home')
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
     }
 
     render() {

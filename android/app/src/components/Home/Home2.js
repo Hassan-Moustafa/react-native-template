@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Image, TouchableHighlight } from 'react-native'
+import { Text, ScrollView, StyleSheet, Image, TouchableHighlight , BackHandler} from 'react-native'
 import {
     View,
     Button,
@@ -7,7 +7,8 @@ import {
 } from 'native-base';
 import {
     responsiveHeight,
-    responsiveWidth
+    responsiveWidth,
+    responsiveFontSize
 } from "react-native-responsive-dimensions";
 import HeaderApp from "../common/common/OrdersHeader";
 
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     card: {
         backgroundColor: 'white',
         padding: 10,
-        width: '35%',
+        width: '40%',
         borderRadius: 10,
         display: 'flex',
         flexDirection: 'column',
@@ -41,6 +42,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,
         shadowRadius: 2,
+        paddingLeft: 1,
+        paddingRight: 1,
     },
     image: {
         width: '80%',
@@ -98,8 +101,18 @@ class Home extends Component {
 
         ]
     }
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress',this.handleBackPress);
+    }
 
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
 
+    handleBackPress = () => {
+        this.props.history.goBack();
+        return true;
+    }
     render() {
 
         let routes = this.state.routes.map((item, index) => {
@@ -108,12 +121,13 @@ class Home extends Component {
                     <TouchableHighlight onPress={() => this.props.history.push(`/${item.route}`)}>
                         <View>
                             <Text style={{
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                fontSize: responsiveFontSize(1.5)
                             }}>{item.displayText}</Text>
                             {item.iconName ?
                                 <Icon style={{
                                     textAlign: 'center',
-                                    fontSize: 50
+                                    fontSize: responsiveFontSize(6)
                                 }} type={item.iconType} name={item.iconName} />
                                 :
                                 <Image source={item.imageName} style={styles.iconImage} resizeMode='contain' />

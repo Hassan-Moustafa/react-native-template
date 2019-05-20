@@ -33,6 +33,9 @@ class InputComponent extends Component {
         super(props);
         this.InputType = this.props.InputType;
         this.$InputComponent = null;
+        this.state = {
+            secureTextEntry: this.props.elementConfig.secureTextEntry ? this.props.elementConfig.secureTextEntry : false
+        }
 
 
     }
@@ -42,26 +45,48 @@ class InputComponent extends Component {
             this.props.touched && !this.props.valid ? styles.notValid : null,
             this.props.elementConfig.wrapperStyle,
             {
-                marginTop: 10
+                marginTop: responsiveHeight(0.5),
+                fontSize: responsiveFontSize(1.8)
             }
         ]
         switch (this.InputType) {
             case 'input':
                 this.$InputComponent = (
-                        <Item
-                            rounded={this.props.elementConfig.rounded ? this.props.elementConfig.rounded : false}
-                            style={$styles}>
-                            {
-                                this.props.elementConfig.icon
-                                    ? <Icon active name={this.props.elementConfig.icon} type={this.props.elementConfig.iconType} />
-                                    : null
-                            }
-                            <Input
-                                {... this.props.elementConfig}
-                                style={{ width: '100%' }}
-                                onChangeText={(text) => this.props.onChangeHandler(text)} />
+                    <Item
+                        rounded={this.props.elementConfig.rounded ? this.props.elementConfig.rounded : false}
+                        style={$styles}>
+                        {
+                            this.props.elementConfig.icon
+                                ? <Icon active name={this.props.elementConfig.icon} type={this.props.elementConfig.iconType} />
+                                : null
+                        }
+                        <Input
+                            {... this.props.elementConfig}
+                            secureTextEntry={this.state.secureTextEntry}
+                            style={{ width: '100%', fontSize: responsiveFontSize(1.8) }}
+                            onChangeText={(text) => this.props.onChangeHandler(text)} />
+                        {this.props.elementConfig.secureTextEntry ?
+                            
+                            <View style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                paddingRight: 7
+                            }}>
+                                <Icon style={{
+                                    fontSize: 20
+                                }} type="EvilIcons" name="eye" />
+                                <Text
+                                    style={{
+                                        fontSize: 15,
+                                    }}
+                                    onPress={() => this.setState((prevState) => {
+                                        return {
+                                            secureTextEntry: !prevState.secureTextEntry
+                                        }
+                                    })}> show</Text></View> : null}
 
-                        </Item>
+                    </Item>
                 )
                 break;
             case 'textarea':
@@ -141,9 +166,9 @@ class InputComponent extends Component {
                 break;
         }
         return (
-            <View style={[this.props.elementConfig.rootWrapperStyle, {height: this.props.validationMsg ? responsiveHeight(10) : responsiveHeight(6)}]}>
+            <View style={[this.props.elementConfig.rootWrapperStyle, { height: this.props.validationMsg ? responsiveHeight(10) : responsiveHeight(6) }]}>
                 {this.$InputComponent}
-                { this.props.validationMsg !== null ? <Text style={{ marginLeft: 10, color:'red', fontSize: 15 }}>{this.props.validationMsg}</Text> : null }
+                {this.props.validationMsg !== null ? <Text style={{ marginLeft: 10, color: 'red', fontSize: 15 }}>{this.props.validationMsg}</Text> : null}
             </View>
         );
     }

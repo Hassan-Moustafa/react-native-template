@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, BackHandler } from "react-native";
 import { View, Card } from "native-base";
 import {
   responsiveHeight,
@@ -12,9 +12,24 @@ import OrderInfo from './OrderInfo';
 
 import Tab from './Tab';
 
+import {withRouter} from 'react-router-native';
+
 
 class Orders extends Component {
   state = {};
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  handleBackPress = () => {
+    this.props.history.goBack();
+    return true;
+}
 
   render() {
     console.log(this.props)
@@ -34,9 +49,9 @@ class Orders extends Component {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          flex: 1,
+          height: '90%',
           position: 'relative',
-          height: responsiveHeight(80)
+
         }}>
           <ScrollView>
             <Card
@@ -75,4 +90,4 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   }
 })
-export default Orders;
+export default withRouter(Orders);

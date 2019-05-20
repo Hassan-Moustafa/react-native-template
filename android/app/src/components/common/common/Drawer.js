@@ -44,7 +44,7 @@ export default class DrawerExample extends Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        height: responsiveHeight(100),
+        // height: responsiveHeight(80),
         width: responsiveWidth(50),
     }
 })

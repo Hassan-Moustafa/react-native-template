@@ -65,7 +65,8 @@ class Routes extends Component {
         <View
           style={{
             backgroundColor: GlobalStyles.mainColor,
-            height: responsiveHeight(100),
+            height: '100%',
+            // height: responsiveHeight(100),
             width: responsiveWidth(100)
           }}
         >

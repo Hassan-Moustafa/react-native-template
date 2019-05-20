@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import HeaderApp from "../common/common/Header";
-import { ScrollView } from "react-native";
+import { ScrollView , BackHandler} from "react-native";
 import { View, Card } from "native-base";
 import {
   responsiveHeight,
@@ -14,6 +14,19 @@ import Tab from '../common/common/Tab';
 class OrderStatus extends Component {
   state = {};
 
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  handleBackPress = () => {
+    this.props.history.goBack();
+    return true;
+}
+
   render() {
     console.log(this.props)
     const { type, history } = this.props;
@@ -21,7 +34,7 @@ class OrderStatus extends Component {
     return (
       <Drawer ref={(ref) => this.drawer = ref}>
         <HeaderApp
-          heading={`${type}Order`}
+          heading={`${type} Order`}
           history={history}
           iconTypeLeft="Ionicons"
           iconNameLeft="ios-menu"
@@ -34,7 +47,7 @@ class OrderStatus extends Component {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          flex: 1,
+          height: '90%',
           position: 'relative'
         }}>
           <ScrollView>

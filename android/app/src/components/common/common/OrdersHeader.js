@@ -53,9 +53,11 @@ class OrdersHeader extends Component {
         </Button>
 
         <Item
-          style={{ width: responsiveWidth(61), borderRadius: 15, height: '60%', marginTop: 12, backgroundColor: "white" }}>
-          <Input placeholder="search"/>
-          <Icon name="magnifier" type="SimpleLineIcons" />
+          style={{ width: responsiveWidth(61), borderRadius: 10, height: '50%', marginTop: 18, backgroundColor: "white" , alignItems: 'center' }}>
+          <Input placeholder="search" style={{
+            fontSize: responsiveFontSize(1.7)
+          }}  />
+          <Icon name="magnifier" type="SimpleLineIcons" style={{fontSize: responsiveFontSize(2.8)}}/>
         </Item>
 
         <View
@@ -63,14 +65,20 @@ class OrdersHeader extends Component {
         >
           <Button transparent style={{margin: 0}}>
             <Icon
-              style={{ fontSize: responsiveFontSize(3.5), color: 'black' ,margin: 0}}
+              style={{ 
+                fontSize: responsiveFontSize(3.5),
+                color: 'black',
+                marginLeft: !this.props.hideRightText ? 0 : 16,
+                marginRight: !this.props.hideRightText ? 0 : 16,
+                padding:0
+              }}
               type={iconTypeRight}
               name={iconNameRight}
             />
+            {!this.props.hideRightText ? <Text style={{margin: 0}}>
+              Filter
+            </Text> : null}
           </Button>
-          {!this.props.hideRightText ? <Text style={{margin: 0}}>
-            Filter
-          </Text> : null}
         </View>
 
         <View />

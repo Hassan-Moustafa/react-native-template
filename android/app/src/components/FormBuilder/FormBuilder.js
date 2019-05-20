@@ -67,32 +67,33 @@ class Home extends Component {
     checkFieldValidity(value, rules, fieldName) {
         let isValid = true;
         let validationMsg = null;
+        let fieldDisplayText = this.state.formSchema[fieldName].elementConfig.placeholder;
         if (!rules) {
             return isValid;
         }
         if (rules.isRequired) {
             isValid = (value.trim() !== '') && isValid;
-            validationMsg = !isValid ?  `${fieldName} is required` : null;
+            validationMsg = !isValid ?  `${fieldDisplayText} is required` : null;
         }
         if (rules.minLength) {
             isValid = value.length >= rules.minLength && isValid;
-            validationMsg = !isValid ?  `${fieldName} min length is ${rules.minLength}` : null;
+            validationMsg = !isValid ?  `${fieldDisplayText} min length is ${rules.minLength}` : null;
         }
         if (rules.maxLength) {
             isValid = value.length <= rules.maxLength && isValid;
-            validationMsg = !isValid ?  `${fieldName} max length is ${rules.maxLength}` : null;
+            validationMsg = !isValid ?  `${fieldDisplayText} max length is ${rules.maxLength}` : null;
         }
         if (rules.isNumber) {
             isValid = /^[0-9]*$/.test(value) && isValid;
-            validationMsg = !isValid ?  `${fieldName} must be a valid number` : null;
+            validationMsg = !isValid ?  `${fieldDisplayText} must be a valid number` : null;
         }
         if (rules.isMoney) {
             isValid = /^([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\.[0-9]{0,2})?|0(\.[0-9]{0,2})?|(\.[0-9]{1,6})?)$/.test(value) && isValid;
-            validationMsg = !isValid ?  `${fieldName} must be a valid price` : null;
+            validationMsg = !isValid ?  `${fieldDisplayText} must be a valid price` : null;
         }
         if (rules.isEqualToField) {
             isValid = this.state.formSchema[rules.isEqualToField].elementConfig.value === value && isValid;
-            validationMsg = !isValid ?  `${fieldName} must be equal to ${rules.isEqualToField}` : null;
+            validationMsg = !isValid ?  `${fieldDisplayText} must be equal to ${rules.isEqualToField}` : null;
         }
 
         return {isValid,validationMsg}

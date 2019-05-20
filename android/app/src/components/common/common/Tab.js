@@ -52,21 +52,21 @@ class Tab extends Component {
               display: 'flex',
               flexDirection: 'row',
               alignContent: 'center',
-              alignItems: 'baseline'
+              alignItems: 'baseline',
             }}>
-            {
-              this.props.history.location.pathname === `/${tab.route}` ? 
-            
-              <View style={{
-                height: '80%',
-                position: 'relative',
-                width:5,
-                borderRadius: 15,
-                backgroundColor: 'yellow'
-              }}>
-              </View> : null 
-            }
-              <Image source={tab.icon} style={styles.iconImage} resizeMode="contain"/>
+              {
+                this.props.history.location.pathname === `/${tab.route}` ?
+
+                  <View style={{
+                    height: '80%',
+                    position: 'relative',
+                    width: 5,
+                    borderRadius: 15,
+                    backgroundColor: 'yellow'
+                  }}>
+                  </View> : null
+              }
+              <Image source={tab.icon} style={styles.iconImage} resizeMode="contain" />
             </View>
           </TouchableOpacity>
         </View>
@@ -79,13 +79,21 @@ class Tab extends Component {
         flexDirection: 'row',
         backgroundColor: 'white',
         justifyContent: 'space-evenly',
+        alignContent: 'center',
+        alignItems: 'center',
         width: responsiveWidth(90),
-        height: responsiveHeight(6),
-        position: 'relative',
+        // height: responsiveHeight(12),
+        position: 'absolute',
+        bottom: '0%',
+        // top: '90%',
         left: responsiveWidth(5),
-        // bottom: 0,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 10 },
+        shadowOpacity: 1.0,
+        shadowRadius: 5,
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
+        paddingBottom: 15
       }}>
         {tabs}
       </View>

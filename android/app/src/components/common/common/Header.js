@@ -35,9 +35,9 @@ class HeaderApp extends Component {
       iconNameRight
     } = this.props;
     return (
-      <Header style={{ backgroundColor: GlobalStyles.mainColor }}>
+      <Header style={{ backgroundColor: GlobalStyles.mainColor, height: responsiveHeight(10) , display: 'flex' , flexDirection: 'row' , justifyContent: 'space-between', width: responsiveWidth(100) }}>
         {iconNameLeft ? (
-          <Left style={{ flex: 1 }}>
+          
             <Button onPress={this.props.leftButtonClicked} transparent>
               <Icon
                 style={{ fontSize: 30 , color: 'black'}}
@@ -45,7 +45,7 @@ class HeaderApp extends Component {
                 name={iconNameLeft}
               />
             </Button>
-          </Left>
+          
         ) : (
           <View />
         )}
@@ -65,17 +65,17 @@ class HeaderApp extends Component {
             </Item>
             </View>
            */}
-            <Body style={{ flex: 1, justifyContent: "center" }}>
+            
             <Title
-              style={{ alignSelf: "center", fontSize: responsiveFontSize(2.2), color: 'black' }}
+              style={{ alignSelf: "center", fontSize: responsiveFontSize(2), color: 'black' }}
             >
               {heading}
             </Title>
-            </Body>
+  
 
 
         {iconNameRight ? (
-          <Right style={{ flex: 1 }}>
+          
             <Button transparent onPress={this.props.rightButtonClicked}>
               <Icon
                 style={{ fontSize: 30 , color: 'black' }}
@@ -83,7 +83,7 @@ class HeaderApp extends Component {
                 name={iconNameRight}
               />
             </Button>
-          </Right>
+          
         ) : (
           <View />
         )}
